@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="SEES.WebDevelopers">
+    <meta name="description"
+        content="DisCode es una plataforma hecha para enseñar programación a las personas, que no estén familiarizadas en este ámbito, o a los que saben y quieren reforzar sus habilidades y conocimientos.">
+    <meta name="keywords"
+        content="DisCode, Aprender a Programar, Programación, Diseño, Marketing, Videojuegos, Lenguajes de Programación, Realidad Virtual, Realidad Aumentada, Desarrollo Web, Diseño Web, Como empezar a programar, SEES.WebDevelopers, SEES, SEES.WD">
+
+    <!--Favicon-->
+    <link id="favicon" rel="icon"
+        href="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fdiscode_favicon.ico?v=1619411013899"
+        type="image/x-icon" />
+
+    <title>DisCode</title>
+    <!--Kit Iconos FontAwesome-->
+    <script src="https://kit.fontawesome.com/acd423b58e.js" crossorigin="anonymous"></script>
+
+    <!--Kit Iconos Material Icon-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!--Asset para efecto Typed-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+    <!--Estilos CSS-->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+        /*    Variables   */
+        :root {
+            --colorContenedorUNO: #3f37c9;
+            --colorContenedorDOS: #4c3eed;
+            --colorContenedorNAV: #4c66e6;
+            --colorContenedorFOOTER: #1b2739;
+            --colorContenedorMenuResponsivo: #0f243586;
+
+            --colorTexto: #ffffff;
+            --colorHipervinculos: #2647f8;
+            --colorHipervinculosMenu: #fd583a;
+
+            /*Paleta de Colores*/
+            --color3049F6: #3049f6;
+            --color3840e0: #3840e0;
+            --color3f37c9: #3f37c9;
+            --color4c3eed: #4c3eed;
+            --color3a0ca3: #3a0ca3;
+            --color2b1a6e: #2b1a6e;
+            --color1b2739: #1b2739;
+            --colorBotones: #4361EE;
+
+            --FontUbuntu: "Ubuntu", sans-serif;
+            --FontSourceSansPro: "Source Sans Pro", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        /*          HEADER           */
+
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 10px;
+            background: var(--colorContenedorNAV);
+            box-sizing: border-box;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .logo {
+            color: var(--colorTexto);
+            height: 50px;
+            font-size: 36px;
+            line-height: 60px;
+            padding: 0 20px;
+            text-align: center;
+            box-sizing: border-box;
+            float: left;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        nav {
+            float: right;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 6px;
+        }
+
+        nav ul li a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--colorTexto);
+            border-radius: 4px;
+            font-weight: 400;
+        }
+
+        nav ul li a:hover {
+            transition: 0.5s;
+        }
+
+        .btn_normal:hover {
+            background: var(--colorTexto);
+            color: var(--colorBotones);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        }
+
+        .btn_login {
+            box-shadow: inset 0 0 0 3px var(--colorTexto);
+        }
+
+        .btn_register {
+            background: var(--colorTexto);
+            color: var(--colorBotones);
+            padding: 10px 30px;
+        }
+
+        .btn_login:hover {
+            background: var(--colorTexto);
+            color: var(--colorBotones);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        }
+
+        .btn_register:hover {
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        }
+
+        /*          MAIN           */
+        main {
+            width: 100%;
+            padding-top: 80px;
+        }
+
+        .grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /*  Principal  */
+        .bg_principal {
+            background: url(https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fbg-3.png?v=1615260780588) no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: cover;
+            width: 100%;
+            height: calc(100vh - 80px);
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .principal {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0rem;
+        }
+
+        .principal__texto {
+            width: 100%;
+            padding: 120px 30px 40px 120px;
+        }
+
+        .principal__texto h1 {
+            color: var(--colorTexto);
+            font-size: 5vw;
+            letter-spacing: 1px;
+            line-height: 5.3vw;
+        }
+
+        .principal__texto p {
+            color: var(--colorTexto);
+            font-weight: 400;
+            line-height: 35px;
+            margin-top: 30px;
+        }
+
+        .principal__texto p span {
+            font-size: 1.9vw;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #d9ff00;
+        }
+
+        .principal__texto .boton {
+            width: 100%;
+            margin-top: 80px;
+            text-align: center;
+            font-size: 1.5vw;
+            font-weight: 500;
+        }
+
+        .principal__texto .boton a {
+            background: var(--colorTexto);
+            color: #4361EE;
+            border-radius: 500px;
+            text-decoration: none;
+            padding: 12px 38px;
+            transition: 0.3s;
+        }
+
+        .principal__texto .boton a:hover {
+            background: none;
+            color: var(--colorTexto);
+            border: 3px solid var(--colorTexto);
+        }
+
+        .principal__texto .boton a i {
+            font-size: 1.2vw;
+        }
+
+        .principal__img {
+            width: 100%;
+            padding: 100px 45px 0px 45px;
+        }
+
+        .principal__img p {
+            text-align: center;
+        }
+
+        .principal__img p img {
+            width: 75%;
+            max-width: 90%;
+            height: auto;
+            transition: 0.5s;
+        }
+
+        .principal__desplazar {
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .principal__desplazar a {
+            color: var(--colorTexto);
+            padding: 3px 12px;
+            border-radius: 500px;
+            transition: 0.5s;
+        }
+
+        .principal__desplazar a:hover {
+            color: #4361EE;
+            background: var(--colorTexto);
+        }
+
+        /*  ¿Quienes Somos?  */
+        .contenedor_aboffer {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: auto;
+        }
+
+        .contenedor_aboffer:nth-child(2) {
+            background: var(--colorContenedorUNO);
+        }
+
+        .aboffer__texto {
+            width: 100%;
+            padding: 120px;
+        }
+
+        .aboffer__texto h2 {
+            color: var(--colorTexto);
+            font-family: var(--FontUbuntu);
+            font-size: 4vw;
+            font-weight: 700;
+        }
+
+        .aboffer__texto p {
+            color: var(--colorTexto);
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.8rem;
+            margin-top: 35px;
+        }
+
+        .aboffer__img {
+            width: 100%;
+            padding: 70px 120px;
+        }
+
+        .aboffer__img p {
+            text-align: center;
+        }
+
+        .aboffer__img p img {
+            width: 70%;
+            max-width: 90%;
+            height: auto;
+        }
+
+        /*  ¿Qué Ofrecemos?  */
+        .contenedor_aboffer:nth-child(3) {
+            background: var(--colorContenedorDOS);
+        }
+
+        .contenedor_aboffer:nth-child(3) .aboffer__texto {
+            order: 2;
+        }
+
+        /*  Galeria  */
+        .contenedor-galeria {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            height: 60rem;
+        }
+
+        .galeria__item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .galeria__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .galeria__title {
+            position: absolute;
+            bottom: 0;
+            color: white;
+            background: linear-gradient(#1b273900, var(--colorContenedorFOOTER));
+            width: 100%;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+            font-size: 22px;
+            transition: all 0.5s;
+            opacity: 1;
+        }
+
+        .galeria__item:nth-child(1),
+        .galeria__item:nth-child(4) {
+            grid-column-start: span 2;
+            grid-row-start: span 2;
+        }
+
+        .contenedor-galeria div:hover>.galeria__title {
+            opacity: 0;
+        }
+
+        .contenedor-galeria div:hover>.galeria__img {
+            transform: scale(1.1);
+        }
+
+        /*  Servicios  */
+        .Servicios {
+            background: url(https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fbg.png?v=1616551789576) no-repeat;
+            background-size: cover;
+            background-attachment: inherit;
+            background-position: center;
+            width: 100%;
+            height: auto;
+        }
+
+        .Servicios-Contenedor {
+            width: 70%;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: auto;
+            margin-left: 15%;
+            padding: 120px 0px 160px 0px;
+        }
+
+        .Servicios__titulo {
+            width: 100%;
+        }
+
+        .Servicios__titulo h2 {
+            color: var(--colorTexto);
+            font-family: var(--FontUbuntu);
+            font-size: 5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .Servicios-Contenedor hr {
+            width: 100%;
+            color: var(--colorTexto);
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            border: 4px solid var(--colorTexto);
+            transition: all 0.3s;
+        }
+
+        .Servicios__Items {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+        }
+
+        .Servitems {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+
+        .Servitems span {
+            width: 100%;
+            color: var(--colorTexto);
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        .Servitems p {
+            color: var(--colorTexto);
+            font-size: 1.2rem;
+        }
+
+        .Servicios__boton {
+            width: 100%;
+            padding: 100px 0px;
+            text-align: center;
+        }
+
+        .Servicios__boton a {
+            background: var(--colorTexto);
+            color: var(--colorBotones);
+            font-size: 1.6rem;
+            font-weight: 400;
+            padding: 14px 40px;
+            border-radius: 700px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .Servicios__boton a:hover {
+            background: none;
+            color: var(--colorTexto);
+            border: 3px solid var(--colorTexto);
+        }
+
+        .Servicios-Contenedor .Servicios-Boton a:hover {
+            color: var(--colorHipervinculos);
+            background: var(--colorTexto);
+        }
+
+        /*  Blog  */
+        .Blog-Grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 100%;
+            height: auto;
+        }
+
+        .Blog-Grid .Contenedor-Blog {
+            width: 70%;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: auto;
+            margin-left: 15%;
+            padding: 120px 0px 160px 0px;
+        }
+
+        .Contenedor-Blog .Blog-Titulo {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 100%;
+            margin-bottom: 60px;
+        }
+
+        .Contenedor-Blog .Blog-Titulo h2 {
+            color: var(--color3049F6);
+            font-size: 5rem;
+            font-family: var(--FontUbuntu);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .Contenedor-Blog .Blog-Entradas {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .Contenedor-Blog .Blog-Entradas .Articulos {
+            margin: 1vw;
+            height: 20rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 10px 50px #1b2739bd;
+        }
+
+        .Contenedor-Blog .Blog-Entradas .Articulos a {
+            background: rgba(0, 0, 0, 0.589);
+            text-decoration: none;
+        }
+
+        .Contenedor-Blog .Blog-Entradas .Articulos a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .Blog-Entradas .Articulos a .articulo__datos {
+            position: absolute;
+            bottom: 0;
+            color: var(--colorTexto);
+            width: 100%;
+            padding: 20px;
+            font-family: var(--FontUbuntu);
+        }
+
+        .articulo__datos .articulo__fecha {
+            font-size: 0.8vw;
+            font-weight: 500;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .articulo__datos .articulo__titulo {
+            font-size: 1.2vw;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .Articulos a:hover>.articulo__img {
+            transform: scale(1.1);
+        }
+
+        .Articulos a:hover>.articulo__datos .articulo__fecha {
+            font-size: 1vw;
+        }
+
+        .Articulos a:hover>.articulo__datos .articulo__titulo {
+            font-size: 1.5vw;
+        }
+
+        .Articulos a:hover>.articulo__datos {
+            background-color: #3840e0;
+            transition: all 0.3s;
+        }
+
+        .Blog-Boton {
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .Blog-Boton a {
+            color: var(--colorTexto);
+            background: var(--colorHipervinculos);
+            font-size: 25px;
+            font-weight: 500;
+            border-radius: 500px;
+            padding: 15px 70px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .Blog-Boton a:hover {
+            background: var(--colorContenedorFOOTER);
+        }
+
+        /*          FOOTER           */
+        footer {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 100%;
+            height: auto;
+            background: var(--colorContenedorFOOTER);
+        }
+
+        footer .Contenedor-Footer {
+            margin-left: 20%;
+            width: 60%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: auto;
+        }
+
+        .footer__logotipo {
+            width: 100%;
+        }
+
+        .footer__logotipo label.footer__logo {
+            font-size: 35px;
+            line-height: 120px;
+            font-weight: 500;
+        }
+
+        .footer__logotipo label.footer__logo a {
+            text-decoration: none;
+            color: var(--colorTexto);
+            transition: all 0.3s;
+        }
+
+        .footer__links {
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer__links ul {
+            list-style: none;
+        }
+
+        .footer__links ul li {
+            display: inline-block;
+            line-height: 120px;
+            margin: 0 1vh;
+        }
+
+        .footer__links ul li a {
+            color: var(--colorTexto);
+            font-size: 18px;
+            font-weight: 300;
+            transition: all 0.3s;
+        }
+
+        .footer__sm {
+            width: 100%;
+            text-align: right;
+        }
+
+        .footer__sm ul {
+            list-style: none;
+        }
+
+        .footer__sm ul li {
+            display: inline-block;
+            line-height: 120px;
+            margin: 0 1vh;
+        }
+
+        .footer__sm ul li a {
+            text-decoration: none;
+            color: var(--colorContenedorFOOTER);
+            background: var(--colorTexto);
+            font-size: 24px;
+            border-radius: 500px;
+            transition: all 0.3s;
+        }
+
+        .facebook {
+            padding: 10px 20px;
+        }
+
+        .twitter {
+            padding: 10px 15px;
+        }
+
+        .linkedin {
+            padding: 10px 17px;
+        }
+
+        .instagram {
+            padding: 10px 16px;
+        }
+
+        .footer__logotipo label.footer__logo a:hover,
+        .footer__links ul li a:hover {
+            color: var(--colorHipervinculos);
+        }
+
+        .facebook:hover,
+        .twitter:hover,
+        .instagram:hover,
+        .linkedin:hover {
+            background: var(--colorHipervinculos);
+            color: var(--colorTexto);
+        }
+
+        .footer__copyright {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer__copyright span {
+            color: var(--colorTexto);
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+
+        /*          MEDIA QUERIES           */
+
+        @media (max-width: 1500px) {
+            .principal__img p img {
+                width: 88%;
+            }
+
+            .aboffer__texto {
+                padding: 60px;
+            }
+
+            .aboffer__img {
+                padding: 60px;
+            }
+
+            .aboffer__img p img {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .principal__texto h1 {
+                font-size: 6.5vw;
+                line-height: 6.6vw;
+            }
+
+            .Servicios__Items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .Servitems {
+                margin-bottom: 30px;
+            }
+
+            footer .Contenedor-Footer {
+                grid-template-columns: repeat(1, 1fr);
+                height: auto;
+            }
+
+            .footer__logotipo,
+            .footer__links,
+            .footer__sm {
+                text-align: center;
+            }
+
+            .footer__logotipo label.footer__logo {
+                line-height: 80px;
+            }
+
+            .footer__links ul li {
+                line-height: 20px;
+            }
+
+            .footer__sm ul li {
+                line-height: 100px;
+            }
+
+            .footer__copyright {
+                padding: 0px 0px 20px 0px;
+            }
+        }
+
+        @media (max-width: 910px) {
+            .menu-toggle {
+                display: block;
+                width: 40px;
+                height: 40px;
+                margin: 10px;
+                float: right;
+                cursor: pointer;
+                text-align: center;
+                font-size: 30px;
+                color: var(--colorTexto);
+            }
+
+            .menu-toggle:hover {
+                color: var(--colorHipervinculosMenu);
+            }
+
+            .menu-toggle::before {
+                content: '\f0c9';
+                /*\f00d*/
+                font-family: FontAwesome;
+                line-height: 40px;
+            }
+
+            .menu-toggle.active::before {
+                content: '\f00d';
+            }
+
+            .btn_login,
+            .btn_register {
+                box-shadow: none;
+                background: none;
+                color: var(--colorTexto);
+            }
+
+            .btn_register:hover {
+                box-shadow: none;
+                background: var(--colorTexto);
+                color: var(--colorBotones);
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+                width: 100%;
+            }
+
+            nav.active ul {
+                display: block;
+            }
+
+            nav.active ul li a {
+                margin: 0;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 893px) {
+            .bg_principal {
+                background: url(https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fbg-rs-3.png?v=1615261737128) no-repeat;
+                background-size: cover;
+                background-attachment: inherit;
+                background-position: center;
+                height: auto;
+            }
+
+            .principal {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .principal__texto {
+                width: 100%;
+                padding: 120px 70px 40px 70px;
+            }
+
+            .principal__texto h1 {
+                text-align: left;
+                font-size: 10vw;
+                font-weight: 600;
+                line-height: 10.2vw;
+            }
+
+            .principal__texto p {
+                text-align: center;
+                margin-top: 10px;
+                line-height: 4.6vw;
+            }
+
+            .principal__texto p span {
+                font-size: 4.5vw;
+                font-weight: 400;
+                letter-spacing: 0px;
+            }
+
+            .principal__texto .boton {
+                font-size: 3vw;
+            }
+
+            .principal__texto .boton a i {
+                display: none;
+            }
+
+            .principal__desplazar a {
+                font-size: 1.5rem;
+            }
+
+            .principal__img {
+                padding: 60px 30px;
+            }
+
+            .principal__img p img {
+                width: 60%;
+            }
+
+            .contenedor_aboffer {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .aboffer__texto {
+                padding: 4em;
+            }
+
+            .aboffer__texto h2 {
+                font-size: 7vw;
+                text-align: center;
+            }
+
+            .aboffer__texto p {
+                font-size: 1rem;
+                text-align: justify;
+                line-height: 1.5rem;
+            }
+
+            .aboffer__img {
+                padding: 0px 40px 70px 40px;
+            }
+
+            .aboffer__img p img {
+                width: 70%;
+            }
+
+            .contenedor_aboffer:nth-child(3) .aboffer__texto {
+                order: 0;
+            }
+
+            .contenedor-galeria {
+                height: 100rem;
+            }
+
+            .galeria__item:nth-child(1),
+            .galeria__item:nth-child(4) {
+                grid-column-start: span 4;
+                grid-row-start: span 4;
+            }
+
+            .galeria__item:nth-child(2),
+            .galeria__item:nth-child(3),
+            .galeria__item:nth-child(5),
+            .galeria__item:nth-child(6) {
+                grid-column-start: span 2;
+                grid-row-start: span 2;
+            }
+
+            .Servicios {
+                background: url(https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FGrupo%202835.png?v=1616551775960) no-repeat;
+                background-size: cover;
+                background-attachment: inherit;
+                background-position: center;
+                height: auto;
+            }
+
+            .Servicios__Items {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .Servitems {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 0px;
+            }
+
+            .Servitems p {
+                margin-top: 1rem;
+                text-align: center;
+            }
+
+            .Servitems span {
+                font-size: 5.5rem;
+                margin-top: 3rem;
+            }
+
+            .Contenedor-Blog .Blog-Titulo h2 {
+                font-size: 5rem;
+            }
+
+            .Contenedor-Blog .Blog-Entradas {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .Contenedor-Blog .Blog-Entradas .Articulos {
+                margin: 20px;
+            }
+
+            .articulo__datos .articulo__fecha {
+                font-size: 2vw;
+            }
+
+            .articulo__datos .articulo__titulo {
+                font-size: 3vw;
+            }
+
+            .Articulos a:hover>.articulo__datos .articulo__fecha {
+                font-size: 2.2vw;
+            }
+
+            .Articulos a:hover>.articulo__datos .articulo__titulo {
+                font-size: 3.2vw;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .contenedor-galeria {
+                height: 80rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .principal__texto {
+                padding: 120px 60px 0px 60px;
+            }
+
+            .principal__texto h1 {
+                text-align: center;
+                font-size: 8.5vw;
+                font-weight: 600;
+                line-height: 8.6vw;
+            }
+
+            .principal__texto p {
+                text-align: center;
+                margin-top: 10px;
+                line-height: 3vw;
+            }
+
+            .principal__texto p span {
+                font-size: 4.4vw;
+                line-height: 6vw;
+                font-weight: 400;
+            }
+
+            .aboffer__texto {
+                padding: 2rem;
+            }
+
+            .aboffer__texto p {
+                margin-top: 15px;
+            }
+
+            .aboffer__texto h2 {
+                font-size: 2.5rem;
+            }
+
+            .contenedor-galeria {
+                height: 65rem;
+            }
+
+            .galeria__title {
+                font-size: 1rem;
+            }
+
+            .Servicios__titulo h2 {
+                font-size: 4rem;
+            }
+
+            .Servicios-Contenedor hr {
+                margin-top: 40px;
+                margin-bottom: 40px;
+                border: 2px solid var(--colorTexto);
+            }
+
+            .Servicios__boton {
+                padding: 40px 0px;
+            }
+
+            .Servicios__boton a {
+                font-size: 1.3rem;
+                padding: 12px 25px;
+            }
+
+            .Servicios-Contenedor .Servicios-Boton a {
+                font-size: 22px;
+                padding: 12px 40px;
+            }
+
+            .Servicios-Contenedor .Servicios-Texto h2 {
+                font-size: 9vw;
+            }
+
+            .Servicios-Contenedor hr {
+                margin-top: 40px;
+                margin-bottom: 40px;
+                border: 2px solid var(--colorTexto);
+            }
+
+            .Servicios-Items div p {
+                font-size: 4vw;
+                font-weight: 400;
+            }
+
+            .Contenedor-Blog .Blog-Titulo {
+                margin-bottom: 30px;
+            }
+
+            .Contenedor-Blog .Blog-Titulo h2 {
+                font-size: 9vw;
+            }
+
+            .Contenedor-Blog .Blog-Entradas .Articulos {
+                margin: 10px;
+            }
+
+            .articulo__datos .articulo__fecha {
+                font-size: 13px;
+            }
+
+            .articulo__datos .articulo__titulo {
+                font-size: 18px;
+            }
+
+            .Blog-Boton a {
+                font-size: 20px;
+                font-weight: 400;
+            }
+
+            .footer__links ul li {
+                margin: 0px 1vw;
+            }
+
+            .footer__links ul li a {
+                font-size: 14px;
+            }
+
+            .footer__sm ul li {
+                margin: 0 1vw;
+            }
+
+            .footer__sm ul li a {
+                font-size: 14px;
+            }
+
+            .facebook {
+                padding: 5px 10px;
+            }
+
+            .twitter {
+                padding: 5px 7px;
+            }
+
+            .linkedin {
+                padding: 5px 9px;
+            }
+
+            .instagram {
+                padding: 5px 8px;
+            }
+
+            .bg_grid .texto .boton a i {
+                display: none;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .principal__texto .boton a {
+                padding: 12px 20px;
+                font-size: 4.4vw;
+            }
+
+            .contenedor-galeria {
+                height: 50rem;
+            }
+
+            .Servicios__boton a {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+
+            .Servicios__titulo h2 {
+                font-size: 3rem;
+            }
+
+
+            .Blog-Boton a {
+                padding: 12px 40px;
+            }
+        }
+    </style>
+</head>
+
+<!--  -->
+
+<body>
+    <!--      HEADER      -->
+    <header>
+        <!-- Label DisCode & Botón NAV Responsivo -->
+        <a href="{% url 'index' %}" class="logo">DisCode</a>
+        <div class="menu-toggle"></div>
+
+        <!-- Menu de navegación -->
+        <nav>
+            <ul>
+                <li><a href="#Aprendizaje" class="btn_normal">Aprendizaje</a></li>
+                <li><a href="#Servicios" class="btn_normal">Servicios</a></li>
+                <li><a href="#Blog" class="btn_normal">Blog</a></li>
+                <li><a href="{% url 'login' %}" class="btn_login">Iniciar Sesión</a></li>
+                <li><a href="{% url 'register' %}" class="btn_register">Regístrarse</a></li>
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+
+
+    <!--      MAIN      -->
+    <main>
+        <section class="grid">
+
+            <!-- Fondo DisCode -->
+            <section class="bg_principal">
+
+                <div class="principal">
+
+                    <div class="principal__texto">
+                        <h1>DisCode es una plataforma en donde</h1>
+                        <p><span class="animate"></span></p>
+                        <p class="boton">
+                            <a href="{% url 'login' %}">¡Comenzar Ahora! <i class="fas fa-angle-right"></i></a>
+                        </p>
+                    </div>
+
+                    <div class="principal__img">
+                        <p>
+                            <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FRobot%20Mascota%20-%20Lenguajes%20de%20Programacio%CC%81n.svg?v=1615402957108"
+                                alt="DisCode - Robot Mascota Lenguajes de Programación" />
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="principal__desplazar">
+                    <a href="#main_about"><i class="fas fa-chevron-down"></i></i></a>
+                </div>
+            </section>
+
+            <!-- ¿Quiénes Somos? -->
+            <section class="contenedor_aboffer" id="main_about">
+                <div class="aboffer__texto">
+                    <h2>¿Quiénes Somos?</h2>
+                    <p>
+                        Somos una empresa Mexicana de origen Tampiqueño la cual
+                        tiene como finalidad el acercar a las personas a la
+                        programación brindando a nuestros clientes Cursos en
+                        línea.
+                    </p>
+                    <p>
+                        Nuestra meta es llegar a ser reconocidos como una gran
+                        plataforma de aprendizaje y dar ese reconocimiento que
+                        Latinoamérica merece.
+                    </p>
+                </div>
+
+                <div class="aboffer__img">
+                    <p>
+                        <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FRobot%20Mascota%20-%20Hello%20World.svg?v=1615403028135"
+                            alt="" />
+                    </p>
+                </div>
+            </section>
+
+            <!-- ¿Qué Ofrecemos? -->
+            <section class="contenedor_aboffer" id="main_offer">
+                <div class="aboffer__texto">
+                    <h2>¿Qué Ofrecemos?</h2>
+                    <p>
+                        DisCode es una plataforma hecha para enseñar programación a las personas, que no estén
+                        familiarizadas en este ámbito, o a los que saben y quieren reforzar sus habilidades y
+                        conocimientos.
+                    </p>
+                    <p>
+                        El aprendizaje que ofrece DisCode a nuestros clientes, es la gran oportunidad de
+                        planificar los requisitos de algún emprendimiento que desee desarrollar obteniendo
+                        las bases de nuestra plataforma. Además de que nos enfocaremos en que el aprender
+                        programación sea entretenido.
+                    </p>
+                </div>
+
+                <div class="aboffer__img">
+                    <p>
+                        <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FRobot%20Mascota%20-%20Idea.svg?v=1615402684728"
+                            alt="" />
+                    </p>
+                </div>
+            </section>
+
+            <!--Galeria: Áreas-->
+            <section class="contenedor-galeria" id="Aprendizaje">
+                <div class="galeria__item">
+                    <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fpexels-cottonbro-4009625.jpg?v=1616528997821"
+                        alt="" class="galeria__img">
+                    <h2 class="galeria__title">Realidad Virtual & Aumentada</h2>
+                </div>
+                <div class="galeria__item">
+                    <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fluke-peters-B6JINerWMz0-unsplash.jpg?v=1616528813883"
+                        alt="" class="galeria__img">
+                    <h2 class="galeria__title">Desarrollo Web</h2>
+                </div>
+                <div class="galeria__item">
+                    <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fpexels-christina-morillo-1181244.jpg?v=1616529146179"
+                        alt="" class="galeria__img">
+                    <h2 class="galeria__title">Desarrollo Móvil</h2>
+                </div>
+                <div class="galeria__item">
+                    <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fdiego-marin-dMoBlbpDnAE-unsplash.jpg?v=1616532759187"
+                        alt="" class="galeria__img">
+                    <h2 class="galeria__title">Desarrollo de Videojuegos</h2>
+                </div>
+                <div class="galeria__item">
+                    <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fpexels-negative-space-34639.jpg?v=1616529372856"
+                        alt="" class="galeria__img">
+                    <h2 class="galeria__title">Marketing</h2>
+                </div>
+                <div class="galeria__item">
+                    <img src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fheadway-5QgIuuBxKwM-unsplash.jpg?v=1616532775889"
+                        alt="" class="galeria__img">
+                    <h2 class="galeria__title">Diseño Digital</h2>
+                </div>
+            </section>
+
+            <!-- Servicios -->
+            <section class="Servicios" id="Servicios">
+                <section class="Servicios-Contenedor">
+
+                    <div class="Servicios__titulo">
+                        <h2>Servicios</h2>
+                    </div>
+
+                    <hr>
+
+                    <section class="Servicios__Items">
+                        <div class="Servitems">
+                            <span class="material-icons">accessibility_new</span>
+                            <p>Accesibilidad</p>
+                        </div>
+
+                        <div class="Servitems">
+                            <span class="material-icons">school</span>
+                            <p>Ambientes de aprendizaje más cómodos</p>
+                        </div>
+
+                        <div class="Servitems">
+                            <span class="material-icons">trending_up</span>
+                            <p>Mejoramiento de habilidades</p>
+                        </div>
+
+                        <div class="Servitems">
+                            <span class="material-icons">forum</span>
+                            <p>Interacción con la comunidad Dev</p>
+                        </div>
+                    </section>
+
+                    <div class="Servicios__boton">
+                        <a href="{% url 'login' %}">¡Empezar Ahora!</a>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Artículos Destacados -->
+            <section class="Blog-Grid" id="Blog">
+                <section class="Contenedor-Blog">
+                    <section class="Blog-Titulo">
+                        <h2>Artículos Destacados</h2>
+                    </section>
+
+                    <section class="Blog-Entradas">
+
+                        {% if posts %}
+                        {% for post in posts %}
+
+                        {% if post.id == 1 %}
+                        <div class="Articulos">
+                            <a href="{% url 'detalle_post' post.slug %}">
+                                <img src="{{ post.thumbnail }}" alt="" class="articulo__img" id="arti_img">
+                                <div class="articulo__datos">
+                                    <p class="articulo__fecha">{{ post.fecha_creacion }}</p>
+                                    <p class="articulo__titulo">{{ post.titulo }}</p>
+                                </div>
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        {% if post.id == 2 %}
+                        <div class="Articulos">
+                            <a href="{% url 'detalle_post' post.slug %}">
+                                <img src="{{ post.thumbnail }}" alt="" class="articulo__img" id="arti_img">
+                                <div class="articulo__datos">
+                                    <p class="articulo__fecha">{{ post.fecha_creacion }}</p>
+                                    <p class="articulo__titulo">{{ post.titulo }}</p>
+                                </div>
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        {% if post.id == 3 %}
+                        <div class="Articulos">
+                            <a href="{% url 'detalle_post' post.slug %}">
+                                <img src="{{ post.thumbnail }}" alt="" class="articulo__img" id="arti_img">
+                                <div class="articulo__datos">
+                                    <p class="articulo__fecha">{{ post.fecha_creacion }}</p>
+                                    <p class="articulo__titulo">{{ post.titulo }}</p>
+                                </div>
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        {% endfor %}
+                        {% else %}
+                        <h2 class="endif">No se encontro ningun Post</h2>
+                        {% endif %}
+                    </section>
+
+                    <span class="Blog-Boton"><a href="{% url 'blog' %}">Visitar Blog</a></span>
+                </section>
+            </section>
+        </section>
+
+    </main>
+
+
+    <!--      FOOTER      -->
+    <footer>
+        <section class="Contenedor-Footer">
+            <div class="footer__logotipo">
+                <label for="DisCode" class="footer__logo"><a href="#">DisCode</a></label>
+            </div>
+            <div class="footer__links">
+                <ul>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="faqs.html">FAQ's</a></li>
+                </ul>
+            </div>
+            <div class="footer__sm">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/DisCode-108177781417403" class="facebook" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/Discode11" class="twitter" target="_blank"><i
+                                class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/_discode_/" class="instagram" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="#" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </section>
+        <div class="footer__copyright">
+            <span>© SEES.WEBDEVELOPERS 2021</span>
+        </div>
+    </footer>
+
+
+    <!--    SCRIPTS    -->
+    <script>
+        var typed = new Typed('.animate', {
+            strings: [
+                "Desarrolles tus habilidades como programador.",
+                "Aprendas de una manera interactiva.",
+                "Emprendas nuevos retos."
+            ],
+            typeSpeed: 50,
+            backSpeed: 50,
+            backDelay: 1000,
+            loop: true,
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".menu-toggle").click(function () {
+                $(".menu-toggle").toggleClass("active");
+                $("nav").toggleClass("active");
+            });
+        });
+
+        $(document).ready(function () {
+            $("header nav ul li a").click(function () {
+                $(".menu-toggle").toggleClass("active");
+                $("nav").toggleClass("active");
+            });
+        });
+    </script>
+</body>
+
+</html>

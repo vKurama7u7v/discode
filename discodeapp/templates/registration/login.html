@@ -1,0 +1,44 @@
+{% extends 'registration/register.html' %}
+
+{% block title %}
+Iniciar Sesión
+{% endblock title %}
+
+{% block Formulario__Titulo %}
+Iniciar Sesión
+{% endblock Formulario__Titulo %}
+
+{% block Formulario__Opciones %}
+Aún no tienes una cuenta?<a href="{% url 'register' %}">Regístrarse</a>
+{% endblock Formulario__Opciones %}
+
+{% block Grid__Form %}
+<form action="" class="Grid__Form">
+  <div class="form__div" id="Login__Email">
+    <input type="email" class="form__input" placeholder=" " name="email"/>
+    <label for="" class="form__label">Email</label>
+  </div>
+
+  <div class="form__div" id="Login__Password">
+    <input type="password" class="form__input" placeholder=" " name="password"/>
+    <label for="" class="form__label">Contraseña</label>
+  </div>
+
+  <div class="Contenedor__boton">
+    <input
+      type="submit"
+      class="form__boton"
+      value="Iniciar Sesión"
+    />
+  </div>
+</form>
+{% endblock Grid__Form %}
+
+{% block Grid__img %}
+<div class="Grid__img">
+  <img
+    src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FRobot%20Mascota%20-%20Iniciar%20Sesio%CC%81n.svg?v=1615403033886"
+    alt=""
+  />
+</div>
+{% endblock Grid__img %}
