@@ -1,0 +1,46 @@
+{% extends 'social/home.html' %}
+
+{% block Title %}DisCode - {{ leccion.subtitulo }} {% endblock Title %}
+
+{% block aprendizaje %}active{% endblock aprendizaje %}
+{% block comunidad %}{% endblock comunidad %}
+{% block challenge %}{% endblock challenge %}
+{% block miperfil %}{% endblock miperfil %}
+
+{% block Main %}
+<div class="container">
+    <div class="topic">{{ leccion.subtitulo }}</div>
+    <div class="Template__KeyWords">
+        <span><a href="{% url 'home' %}">Aprendizaje</a> > {{ leccion.identificador.identificador }} > {{ leccion.identificador }} > <span style="color: #4361ee;">{{ leccion.subtitulo }}</span></span>
+    </div>
+    <br>
+    <div class="content">
+        <input type="radio" name="slider" checked id="home">
+        <input type="radio" name="slider" id="blog">
+        <input type="radio" name="slider" id="help">
+        <input type="radio" name="slider" id="code">
+        <input type="radio" name="slider" id="about">
+        <div class="list">
+            <label for="home" class="home">
+                <i class="fas fa-quote-right"></i>
+                <span class="title">Lección</span>
+            </label>
+            <label for="code" class="code">
+                <span class="icon"><i class="fas fa-code"></i></span>
+                <span class="title">Código</span>
+            </label>
+            <div class="slider"></div>
+        </div>
+        <div class="text-content">
+            <div class="home text">
+                <div class="title">Contenido</div>
+                <p>{{ leccion.contenido | safe }}</p>
+            </div>
+            <div class="code text">
+                <div class="title">Código de Ejemplo</div>
+                <textarea class="codemirror-textarea" id="editor">{{ leccion.codigo | safe | safe }}</textarea>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock Main %}

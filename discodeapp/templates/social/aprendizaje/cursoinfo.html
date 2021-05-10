@@ -1,0 +1,76 @@
+{% extends 'social/home.html' %}
+
+{% block Title %}DisCode - {{ detalle_curso.titulo }} {% endblock Title %}
+
+{% block aprendizaje %}active{% endblock aprendizaje %}
+{% block comunidad %}{% endblock comunidad %}
+{% block challenge %}{% endblock challenge %}
+{% block miperfil %}{% endblock miperfil %}
+
+{% block Main %}
+<div class="ContenedorArticulo">
+  <div class="Articulo__Template">
+    <div class="Template__Titulo">
+      <h1>{{ detalle_curso.titulo }}</h1>
+    </div>
+
+    <div class="Template__Fecha">
+      <span>{{ detalle_curso.fecha_creacion }}</span>
+    </div>
+
+    <div class="Template__KeyWords">
+      <span><a href="{% url 'home' %}">Aprendizaje</a> > <span style="color: #4361ee;">{{ detalle_curso.titulo }}</span></span>
+    </div>
+
+    <div class="Curso__Calificacion" id="BUENO">
+      <span>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+      </span>
+    </div>
+
+    {% if detalle_tema %}
+      <div class="accordian">
+        {% for detalle_tema in detalle_tema %}
+
+          {% if detalle_tema.identificador.titulo == detalle_curso.titulo %}
+            <div class="card">
+
+              <div class="card-header">
+                  <h3>{{ detalle_tema.titulo }}<span class="fa fa-plus"></span></h3>
+                                      
+              </div>
+              
+              {% if leccion %}
+                <div class="card-body">
+                  {% for leccion in leccion %}
+
+                    {% if leccion.identificador.titulo == detalle_tema.titulo %}
+                      <p><a href="{% url 'detalle_leccion' leccion.slug %}">{{ leccion.subtitulo }}</a></p>
+                    {% endif %}
+
+                  {% endfor %}
+                </div>
+
+              {% else %}
+                <div class="Template__Titulo">
+                  <h2 style="color:crimson;">No se encontro ninguna Lección</h2>
+                </div>
+              {% endif %} 
+            </div>
+          {% endif %}
+        {% endfor %}
+
+      </div>
+    {% else %}
+      <div class="Template__Titulo">
+        <h2 style="color:crimson;">No se encontro ningun tema</h2>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock Main %}

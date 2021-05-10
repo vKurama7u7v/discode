@@ -1,0 +1,79 @@
+{% extends 'social/home.html' %}
+
+{% block Title %}DisCode - Challenges {% endblock Title %}
+
+{% block aprendizaje %}{% endblock aprendizaje %}
+{% block comunidad %}{% endblock comunidad %}
+{% block challenge %}active{% endblock challenge %}
+{% block miperfil %}{% endblock miperfil %}
+
+{% block Main %}
+<section class="GridCursos">
+    <div class="Seccion__Titulo">
+        <h1>{% block h1 %}Challenges{% endblock h1 %}</h1>
+    </div>
+
+    <!-- Modificar por seccion -->
+    <!--Buscador-->
+    <div class="ContBuscar">
+        <div class="Buscador">
+            <div class="btnBuscador">
+                <a href="#">
+                    <span class="material-icons">search</span>
+                </a>
+            </div>
+            <input type="text" name="box" placeholder="Buscador" />
+        </div>
+    </div>
+
+    <section class="ContenedorListaCursos">
+
+        {% if reto %}
+        <div class="ListaCursosSubTitulo">
+            <h2>{% block tituloLista %}Todos los Retos{% endblock tituloLista %}</h2>
+        </div>
+
+        <!-- PERFIL RETOS COMPLETADOS -->
+        <div class="Perfil__Retos">
+            <div class="Perfil__Retos__Completados" id="ListaChallenges">
+
+                {% for reto in reto %}
+
+                <a href="{% url 'detalle_challenge' reto.slug %}" class="Item__Reto">
+                    <div class="Reto__Imagen">
+                        <img src="{{ reto.thumbnail }}"
+                            alt="" height="100px">
+                        <span>{{ reto.categoria }}</span>
+                    </div>
+
+                    <div class="Reto__Descripcion">
+                        <div class="Reto__Titulo">
+                            <h2>{{ reto.titulo }}</h2>
+                        </div>
+                        <div class="Reto__Texto">
+                            <p>{{ reto.descripcion }}</p>
+                        </div>
+                        <div class="Reto__Dificultad" id="{{ reto.dificultad }}">
+                            <span class="material-icons">horizontal_rule</span>
+                            <span class="material-icons">horizontal_rule</span>
+                            <span class="material-icons">horizontal_rule</span>
+                            <span class="material-icons">horizontal_rule</span>
+                            <span class="material-icons">horizontal_rule</span>
+                        </div>
+                    </div>
+                </a>
+
+                {% endfor %}
+
+            </div>
+        </div>
+        {% else %}
+        <div class="ListaCursosSubTitulo">
+            <h2 style="color: salmon;">No se encontro ningun Challenge</h2>
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Terminar Modificar por seccion -->
+</section>
+{% endblock Main %}

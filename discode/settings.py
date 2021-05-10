@@ -39,8 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'discodeapp',
+    'discodefaqs',
+    'discodesocial.apps.DiscodesocialConfig',
+    'discodecurso.apps.DiscodecursoConfig',
+    'discoderetos',
     'import_export',
     'ckeditor',
+    'django.contrib.humanize'
 ]
 
 MIDDLEWARE = [
@@ -144,3 +149,5 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+LOGIN_REDIRECT_URL = 'home'

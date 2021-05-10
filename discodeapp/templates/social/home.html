@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block Title %}DisCode - Home{% endblock Title %}</title>
+
+    <!--Favicon-->
+    <link id="favicon" rel="icon"
+        href="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fdiscode_favicon.ico?v=1619411013899"
+        type="image/x-icon" />
+    
+    <!--    Estilos CSS    -->
+    <link rel="stylesheet" href="../../static/estilos_home.css" />
+
+    <!--Kit Iconos FontAwesome-->
+    <script
+      src="https://kit.fontawesome.com/acd423b58e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Kit Iconos Material Icon-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!--Kit Iconos Box Icons-->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!--SRC JQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--CodeMirror-->
+    <script type="text/javascript" src="../../static/plugin/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../static/plugin/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="../../static/plugin/codemirror/addon/edit/closetag.js"></script>
+
+    <link rel="stylesheet" href="../../static/plugin/codemirror/lib/codemirror.css" />
+    <link href="../../static/plugin/codemirror/theme/dracula.css" rel="stylesheet"/>
+
+
+  </head>
+  <body id="body-pd">
+    <!--    a    -->
+
+    <!-- ====== HEADER ===== -->
+    <header class="header" id="header">
+      <div class="header__toggle">
+        <i class="bx bx-menu" id="header-toggle"></i>
+      </div>
+
+      <!--
+      <div class="perfil__img">
+        <div class="header__img">
+          <img
+            src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FRukiaV1.png?v=1617173701292"
+            alt=""
+          />
+        </div>
+      </div>
+      -->
+
+      <div class="right">
+        <ul>
+          <li>
+
+            <!--Mi Perfil-->
+            <a href="#">
+              <p>Aurelio MB<br> 
+                <span>Estudiante</span>
+              </p>
+              <div class="perfil__img">
+                <div class="header__img">
+                  <img
+                    src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FRukiaV1.png?v=1617173701292"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <i class="bx bx-caret-down nav__icon" ></i>
+            </a>
+
+
+            <!--Opciones-->
+            <div class="dropdown">
+              <ul>
+                <li><a href="perfil-discodeapp.html"><span class="material-icons nav__icon">person</span>Mi Perfil</a></li>
+                <li><a href="notificaciones-discodeapp.html"><span class="material-icons nav__icon">notifications</span>Notificaciones</a></li>
+                <li><a href="miaprendizaje-discodeapp.html"><span class="material-icons nav__icon">bookmark_border</span>Aprendizaje</a></li>
+                <li><a href="settings-discodeapp.html"><span class="material-icons nav__icon">settings</span>Editar Perfil</a></li>
+                <li><a href="login.html"><span class="material-icons nav__icon">logout</span>Cerrar Sesión</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+   
+    <!-- ====== MENÚ LATERAL ===== -->
+    <div class="l-navbar" id="nav-bar">
+      <nav class="nav">
+        <div class="navbar_lateral">
+          <a href="{% url 'home' %}" class="nav__logo">
+            <span class="material-icons nav__logo-icon">code</span>
+            <span class="nav__logo-name">DisCode APP</span>
+          </a>
+
+          <div class="nav__list">
+            <a href="{% url 'home' %}" class="nav__link {% block aprendizaje %}active{% endblock aprendizaje %}">
+              <span class="material-icons nav__icon">school</span>
+              <span class="nav__name">Cursos Online</span>
+            </a>
+
+            <a href="{% url 'feed' %}" class="nav__link {% block comunidad %}{% endblock comunidad %}">
+              <span class="material-icons nav__icon">forum</span>
+              <span class="nav__name">Comunidad</span>
+            </a>
+
+            <a href="{% url 'challenges' %}" class="nav__link {% block challenge %}{% endblock challenge %}">
+              <span class="material-icons nav__icon">&#xef54;</span>
+              <span class="nav__name">Retos</span>
+            </a>
+
+            <a href="{% url 'miperfil' %}" class="nav__link {% block miperfil %}{% endblock miperfil %}">
+              <span class="material-icons nav__icon">person</span>
+              <span class="nav__name">Mi Perfil</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="login.html" class="nav__link">
+          <span class="material-icons nav__icon">logout</span>
+          <span class="nav__name">Cerrar Sesión</span>
+        </a>
+      </nav>
+    </div>
+    
+
+    <!-- ====== MAIN ===== -->
+    <main>
+      {% block Main %}
+      <section class="GridCursos">
+        <div class="Seccion__Titulo">
+          <h1>Cursos Online</h1>
+        </div>
+
+        <!-- Modificar por seccion -->
+        <!--Buscador-->
+        <div class="ContBuscar">
+          <div class="Buscador">
+            <div class="btnBuscador">
+              <a href="#">
+                <span class="material-icons">search</span>
+              </a>
+            </div>
+            <input type="text" name="box" placeholder="Buscador" />
+          </div>
+        </div>
+
+        <section class="ContenedorListaCursos">
+          {% if curso %}
+            <div class="ListaCursosSubTitulo">
+              <h2>Todos los cursos</h2>
+            </div>
+
+            <section class="ListadoCursos">
+
+              <!-- ITEMS CURSOS-->
+              {% for curso in curso %}
+              <a href="{% url 'detalle_curso' curso.slug %}" class="Item__Curso">
+                <div class="Curso__Imagen">
+                  <img src="{{ curso.thumbnail }}" alt="" height="100px">
+                  <span>{{ curso.categoria }}</span>
+                </div>
+    
+                <div class="Curso__Descripcion">
+                  <div class="Curso__Titulo">
+                    <h2>{{ curso.titulo }}</h2>
+                  </div>
+                  <div class="Curso__Calificacion" id="BUENO">
+                    <span>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                    </span>
+                    
+                  </div>
+                </div>
+              </a>
+              {% endfor %}
+
+            </section>
+          {% else %}
+            <div class="ListaCursosSubTitulo">
+              <h2>No hay Cursos Disponibles</h2>
+            </div>
+          {% endif %}
+        </section>
+
+        <!-- Terminar Modificar por seccion -->
+      </section>
+      {% endblock Main %}
+    </main>
+
+    <!--SCRIPTS-->
+    <script>
+      const showNavbar = (toggleId, navId, bodyId, headerId) => {
+        const toggle = document.getElementById(toggleId),
+          nav = document.getElementById(navId),
+          bodypd = document.getElementById(bodyId),
+          headerpd = document.getElementById(headerId);
+
+        if (toggle && nav && bodypd && headerpd) {
+          toggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+            toggle.classList.toggle("bx-x");
+            bodypd.classList.toggle("body-pd");
+            headerpd.classList.toggle("body-pd");
+          });
+        }
+      };
+
+      showNavbar("header-toggle", "nav-bar", "body-pd", "header");
+
+      const linkColor = document.querySelectorAll(".nav__link");
+
+      function colorLink() {
+        if (linkColor) {
+          linkColor.forEach((l) => l.classList.remove("active"));
+          this.classList.add("active");
+        }
+      }
+      linkColor.forEach((l) => l.addEventListener("click", colorLink));
+
+
+      document.querySelector(".right ul li").addEventListener("click",function(e) {
+        this.classList.toggle("activar");
+      });
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        $(".card-header").click(function(){
+
+          if($(this).next(".card-body").hasClass("active")){
+            $(this).next(".card-body").removeClass("active").slideUp()
+            $(this).change("span").removeClass("fa-minus").addClass("fa-plus")
+
+          } else {
+
+            $(".card .card-body").removeClass("active").slideUp()
+            $(".card .card-header span").removeClass("fa-minus").addClass("fa-plus")
+            $(this).next(".card-body").addClass("active").slideDown()
+            $(this).change("span").removeClass("fa-plus").addClass("fa-minus")
+          }
+        })
+      })
+    </script>
+
+    <script>
+      let tabs = document.querySelector(".tabs");
+      let tabHeader = tabs.querySelector(".tab-header");
+      let tabBody = tabs.querySelector(".tab-body");
+      let tabIndicator = tabs.querySelector(".tab-indicator");
+      let tabHeaderNodes = tabs.querySelectorAll(".tab-header > div");
+      let tabBodyNodes = tabs.querySelectorAll(".tab-body > div");
+
+      for(let i=0;i<tabHeaderNodes.length;i++){
+        tabHeaderNodes[i].addEventListener("click",function(){
+          tabHeader.querySelector(".active").classList.remove("active");
+          tabHeaderNodes[i].classList.add("active");
+          tabBody.querySelector(".active").classList.remove("active");
+          tabBodyNodes[i].classList.add("active");
+          tabIndicator.style.left = `calc(calc(calc(25% - 5px) * ${i}) + 10px)`;
+        });
+      }
+    </script>
+
+    <script>
+      var editor = CodeMirror.fromTextArea
+      (document.getElementById("editor"),
+      {
+        mode: "xml",
+        theme: "dracula",
+        lineNumbers: true,
+        autoCloseTags: true
+      });
+    </script>
+  </body>
+</html>

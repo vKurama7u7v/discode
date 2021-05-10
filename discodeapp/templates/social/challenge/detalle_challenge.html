@@ -1,0 +1,43 @@
+{% extends 'social/home.html' %}
+
+{% block Title %}DisCode - {{ detalle_challenge.titulo }} {% endblock Title %}
+
+{% block aprendizaje %}{% endblock aprendizaje %}
+{% block comunidad %}{% endblock comunidad %}
+{% block challenge %}active{% endblock challenge %}
+{% block miperfil %}{% endblock miperfil %}
+
+{% block Main %}
+<div class="ContenedorArticulo">
+  <div class="Articulo__Template">
+    <div class="Template__Titulo">
+      <h1>{{ detalle_challenge.titulo }}</h1>
+    </div>
+
+    <div class="Template__Fecha">
+      <span>{{ detalle_challenge.fecha_creacion }}</span>
+    </div>
+
+    <div class="Template__KeyWords">
+      <a href="#">{{ detalle_challenge.categoria }}</a>
+    </div>
+
+    <div class="Reto__Dificultad" id="{{ detalle_challenge.dificultad }}" style="margin-top: 20px;">
+        <span class="material-icons">horizontal_rule</span>
+        <span class="material-icons">horizontal_rule</span>
+        <span class="material-icons">horizontal_rule</span>
+        <span class="material-icons">horizontal_rule</span>
+        <span class="material-icons">horizontal_rule</span>
+    </div>
+
+    <div class="Template__Texto" id="Challenge__img">
+      {{ detalle_challenge.instrucciones | safe }}
+    </div>
+
+    <!-- <div class="Perfil__Social__Botones">
+      <a type="button" class="Perfil__BotonesSocial" id="btnCurso">Comenzar </a>
+    </div> -->
+
+  </div>
+</div>
+{% endblock Main %}

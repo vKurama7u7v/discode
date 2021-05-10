@@ -4,6 +4,16 @@
 Iniciar Sesión
 {% endblock title %}
 
+{% block alerta %}
+  {% if messages %}
+        {% for message in messages %}
+          <div class="notification {{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+  {% endif %}
+{% endblock alerta %}
+
 {% block Formulario__Titulo %}
 Iniciar Sesión
 {% endblock Formulario__Titulo %}
@@ -13,8 +23,10 @@ Aún no tienes una cuenta?<a href="{% url 'register' %}">Regístrarse</a>
 {% endblock Formulario__Opciones %}
 
 {% block Grid__Form %}
-<form action="" class="Grid__Form">
-  <div class="form__div" id="Login__Email">
+<form action="" class="Grid__Form" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <!-- <div class="form__div" id="Login__Email">
     <input type="email" class="form__input" placeholder=" " name="email"/>
     <label for="" class="form__label">Email</label>
   </div>
@@ -22,14 +34,14 @@ Aún no tienes una cuenta?<a href="{% url 'register' %}">Regístrarse</a>
   <div class="form__div" id="Login__Password">
     <input type="password" class="form__input" placeholder=" " name="password"/>
     <label for="" class="form__label">Contraseña</label>
-  </div>
+  </div> -->
 
   <div class="Contenedor__boton">
-    <input
+    <button
       type="submit"
+      id="submit"
       class="form__boton"
-      value="Iniciar Sesión"
-    />
+      >Iniciar Sesión</button>
   </div>
 </form>
 {% endblock Grid__Form %}

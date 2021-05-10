@@ -1,0 +1,1642 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+/*    Variables   */
+:root {
+  --colorContenedorUNO: #3f37c9;
+  --colorContenedorDOS: #4c3eed;
+  --colorContenedorNAV: #4c66e6;
+  --colorContenedorFOOTER: #1b2739;
+  --colorContenedorMenuResponsivo: #0f243586;
+
+  --colorTexto: #ffffff;
+  --colorTextoClaro: #ffffff93;
+  --colorTextoBlog: #515151;
+  --colorHipervinculos: #2647f8;
+  --colorHipervinculosMenu: #fd583a;
+
+  /*Paleta de Colores*/
+  --color3049F6: #3049f6;
+  --color3840e0: #3840e0;
+  --color3f37c9: #3f37c9;
+  --color4c3eed: #4c3eed;
+  --color3a0ca3: #3a0ca3;
+  --color2b1a6e: #2b1a6e;
+  --color1b2739: #1b2739;
+  --colorBotones: #4361ee;
+  --colorBotonesHover: #4c66e669 0px 2px 4px 0px, #4c66e6a8 0px 2px 16px 0px;
+  --colorBG: #eff0f2;
+  --colorTyped: #d9ff00;
+  --colorCursoBG: #eeeeee;
+  --colorContenedorArticulos: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  --FontUbuntu: "Ubuntu", sans-serif;
+  --FontSourceSansPro: "Source Sans Pro", sans-serif;
+  --FontJetBrains: "JetBrains Mono", monospace;
+
+  --AlturaHeader: 3rem;
+  --AnchuraNAV: 68px;
+  --ColorBordeIMG: #eeecfd;
+
+  /*Colores Calificacion*/
+  --ColorMalo: #e76f51;
+  --ColorMediano: #fca311;
+  --ColorExcelente: #52b69a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: calc(var(--AlturaHeader) + 1rem) 0 0 0;
+  padding-left: calc(var(--AlturaHeader) + 2rem);
+  padding-right: 1rem;
+  padding-top: 1rem;
+  background: var(--colorCursoBG);
+}
+
+a {
+  text-decoration: none;
+}
+
+/*HEADER*/
+.header {
+  width: 100%;
+  height: calc(var(--AlturaHeader) + 1rem);
+  padding: 0 2rem 0 calc(var(--AnchuraNAV) + 2rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--colorBotones);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  z-index: 100;
+  transition: 0.5s;
+}
+
+.header__toggle {
+  color: var(--colorTexto);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.header__toggle:hover {
+  background: var(--colorTexto);
+  color: var(--colorBotones);
+}
+
+.perfil__img {
+  width: 48px;
+  height: 48px;
+  padding-top: 4px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.header__img {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.header__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+.right ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.right ul li a {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.right a {
+  text-align: right;
+}
+
+.right p {
+  margin-right: 10px;
+  color: var(--colorTexto);
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+.right a p span {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.right i {
+  color: var(--colorTexto);
+}
+
+.right ul li {
+  position: relative;
+}
+
+.right ul li .dropdown {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  width: 200px;
+  background: var(--colorTexto);
+  box-shadow: var(--colorContenedorArticulos);
+  padding: 10px 25px;
+  border-radius: 5px;
+  display: none;
+}
+
+.dropdown a {
+  color: var(--colorContenedorDOS);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.right ul li .dropdown span {
+  margin-right: 10px;
+  font-size: 1.8rem;
+}
+
+.right ul li .dropdown:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.right ul li.activar .dropdown {
+  display: block;
+}
+
+.l-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem 1rem 0 0;
+  width: var(--AnchuraNAV);
+  height: calc(100%);
+  background-color: var(--colorContenedorUNO);
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 100;
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav__logo,
+.nav__link {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+}
+
+.nav__logo {
+  margin-bottom: 2rem;
+}
+
+.nav__logo-icon {
+  font-size: 1.25rem;
+  color: var(--colorTexto);
+}
+
+.nav__logo-name {
+  font-size: 1.2rem;
+  color: var(--colorTexto);
+  font-weight: 700;
+}
+
+.nav__link {
+  position: relative;
+  color: var(--colorTextoClaro);
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
+}
+
+.nav__link:hover {
+  color: var(--colorTexto);
+}
+
+.nav__icon {
+  font-size: 1.25rem;
+}
+
+.show {
+  width: calc(var(--AnchuraNAV) + 156px);
+}
+
+.body-pd {
+  padding-left: calc(var(--AnchuraNAV) + 188px);
+}
+
+.active {
+  color: var(--colorTexto);
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--colorTexto);
+}
+
+main {
+  width: 100%;
+}
+
+.GridCursos,
+.GridPerfil {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+/*Seccion Lista de Cursos*/
+
+.Seccion__Titulo,
+.ContBuscar,
+.ContenedorListaCursos,
+.Curso__Descripcion,
+.Curso__Titulo,
+.Curso__Calificacion {
+  width: 100%;
+}
+
+.Seccion__Titulo h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--colorBotones);
+}
+
+.Buscador {
+  margin: 0 auto;
+  height: 50px;
+  width: 340px;
+  border: 3px solid var(--colorBotones);
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 14% 86%;
+  gap: 0rem;
+}
+
+.Buscador input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #fff;
+  padding: 0px 4px;
+}
+
+.btnBuscador {
+  background: var(--colorBotones);
+  width: 100%;
+  position: relative;
+}
+
+.btnBuscador a {
+  text-decoration: none;
+  color: var(--colorTexto);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+
+.btnBuscador a span {
+  font-size: 2rem;
+}
+
+.ContenedorListaCursos {
+  margin: 2rem 0px;
+}
+
+.ListaCursosSubTitulo {
+  width: 98%;
+  margin: 0 auto;
+  padding: 10px 0px;
+}
+
+.ListaCursosSubTitulo h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0c0c0c;
+}
+
+.ListadoCursos {
+  width: 98%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.Item__Curso,
+.Item__Reto {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0;
+  box-shadow: var(--colorContenedorArticulos);
+  border-radius: 4px;
+}
+
+.Curso__Imagen,
+.Reto__Imagen {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.Curso__Imagen img,
+.Reto__Imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+.Curso__Imagen span,
+.Reto__Imagen span {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  padding: 1.5px 10px 1.5px 15px;
+  color: var(--colorTextoBlog);
+  background: #ffd166;
+  border-radius: 50px 0px 0px 50px;
+
+  /*Esta wea no se como reducirla*/
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: var(--FontUbuntu);
+}
+
+.Curso__Descripcion,
+.Reto__Descripcion {
+  padding: 0.5rem 1.5rem;
+}
+
+.Curso__Titulo h2 {
+  color: var(--colorTextoBlog);
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--FontSourceSansPro);
+  line-height: 1.5rem;
+}
+
+.Curso__Calificacion {
+  margin: 10px 0px;
+  color: #ced4da;
+}
+
+#SIN_CLASIFICAR{
+  color: #ced4da;
+}
+
+#PESIMO span i:nth-child(1){
+  color: #4361ee;
+}
+
+#MALO span i:nth-child(1),
+#MALO span i:nth-child(2){
+  color: #4361ee;
+}
+
+#REGULAR span i:nth-child(1),
+#REGULAR span i:nth-child(2),
+#REGULAR span i:nth-child(3){
+  color: #4361ee;
+}
+
+#BUENO span i:nth-child(1),
+#BUENO span i:nth-child(2),
+#BUENO span i:nth-child(3),
+#BUENO span i:nth-child(4){
+  color: #4361ee;
+}
+
+#EXCELENTE span i:nth-child(1),
+#EXCELENTE span i:nth-child(2),
+#EXCELENTE span i:nth-child(3),
+#EXCELENTE span i:nth-child(4),
+#EXCELENTE span i:nth-child(5){
+  color: #4361ee;
+}
+
+
+a.Item__Curso:hover > div.Curso__Descripcion h2,
+a.Item__Reto:hover > div.Reto__Descripcion h2 {
+  color: var(--colorBotones);
+  transition: 0.3s;
+}
+
+/*Seccion Detalles Curso*/
+.ContenedorArticulo {
+  width: 100%;
+  background: var(--colorBG);
+}
+
+.Articulo__Template {
+  width: 80%;
+  margin: 20px auto;
+  padding: 80px;
+  background: var(--colorTexto);
+  box-shadow: var(--colorContenedorArticulos);
+  border-radius: 20px;
+}
+
+.Template__Titulo,
+.Template__Fecha,
+.Template__KeyWords,
+.Template__Texto {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.Template__Titulo h1 {
+  color: var(--colorBotones);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+}
+
+.Template__Fecha {
+  margin-top: 20px;
+}
+
+.Template__Fecha span {
+  color: var(--colorTextoBlog);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.Template__KeyWords {
+  margin-top: 3px;
+}
+
+.Template__KeyWords a {
+  color: var(--colorBotones);
+  font-size: 0.8rem;
+  font-weight: 450;
+  padding: 1px 3px;
+  line-height: 1.5rem;
+  margin-right: 2px;
+  border: 2px solid var(--colorBotones);
+  border-radius: 7px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.Template__Texto {
+  margin-top: 3rem;
+}
+
+.Template__Texto p {
+  font-size: 1rem;
+  color: var(--colorTextoBlog);
+  margin-bottom: 2rem;
+  text-align: justify;
+  width: 100%;
+}
+
+.Template__Texto h1 {
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+  font-weight: 700;
+  color: var(--colorContenedorFOOTER);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.Template__Texto h2 {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  font-weight: 700;
+  color: var(--colorContenedorFOOTER);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.Template__Texto h3 {
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+  color: var(--colorContenedorFOOTER);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.Template__Texto img {
+  max-width: 100%;
+  max-height: 30rem;
+  object-fit: cover;
+}
+
+
+#Challenge__img img{
+  max-width: 100%;
+  max-height: 64rem;
+  border-radius: 10px;
+  box-shadow: var(--colorContenedorArticulos);
+}
+
+/*Seccion Temario Cursos*/
+.accordian{
+  display: block;
+  margin: 5px auto;
+  width: 100%;
+}
+
+.accordian .card{
+  box-shadow: 0px 0px 20px #d4d4d4;
+  margin-bottom: 20px;
+  border-radius: 10px
+}
+
+.accordian .card .card-header h3{
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  background-color: var(--colorBotones);
+  margin: 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.accordian .card .card-header h3 span{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  height: 25px;
+  width: 25px;
+  color: var(--colorBotones);
+  background: var(--colorTexto);
+  border-radius: 100px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 13px;
+}
+
+.card-body{
+  width: 100%;
+}
+
+
+.accordian .card .card-body p{
+  font-size: 15px;
+  line-height: 25px;
+  padding: 20px;
+  width: 100%;
+  border-bottom: 2px solid rgba(68, 68, 68, 0.24);
+  border-radius: 0px 0px 10px 10px;
+  transition: 0.3s
+}
+
+.card-body p a{
+  width: 100%;
+  color: #444444;
+  transition: 0.3s;
+}
+
+.accordian .card .card-body p:hover{
+  background: rgb(243, 243, 243);
+  border-bottom: 2px solid #4361ee;
+}
+
+.card-body p a:hover{
+  color: var(--colorBotones);
+}
+
+.accordian .card .card-body{
+  display: none;
+}
+
+
+/*Seccion Comunidad*/
+.feed{
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+article{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #edeff1;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: var(--colorContenedorArticulos);
+}
+
+.Contenedor__PostFeed{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80px 100%;
+}
+
+.PostFeed__IMGBorder{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #4361ee;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.PostFeed__IMG{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.PostFeed__IMG img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.PostFeed__Info{
+  width: 100%;
+}
+
+.PostFeed__Info h2{
+  font-size: 2rem;
+  line-height: 37px;
+}
+
+.PostFeed__Info h2 a{
+  color: var(--colorBotones);
+  transition: 0.3s;
+}
+
+.PostFeed__Info h2 a:hover{
+  color: var(--colorHipervinculosMenu);
+}
+
+.PostFeed__Info__Fecha{
+  font-size: 1rem;
+  font-weight: 500;
+  color: #65676B;
+  line-height: 1rem;
+}
+
+.PostFeed__Info__Fecha span{
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+}
+
+.PostFeed__Info__Publicacion{
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.PostFeed__Info__Publicacion p{
+  width: 100%;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.5rem;
+}
+
+
+
+
+/*Seccion Leccion*/
+::selection{
+  background: var(--colorBotones);
+  color: #fff;
+}
+.container{
+  width: 100%;
+  padding: 40px 50px  40px  40px;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container .topic{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--colorBotones);
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .list{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-right: 50px;
+  position: relative;
+}
+.content .list label{
+  height: 60px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  color: #333;
+  z-index: 12;
+}
+
+#home:checked ~ .list label.home,
+#code:checked ~ .list label.code{
+  color: #fff;
+}
+.content .list label:hover{
+  color: var(--colorBotones);
+}
+.content .slider{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  background: var(--colorBotones);
+  transition: all 0.4s ease;
+}
+#home:checked ~ .list .slider{
+  top: 0;
+}
+
+#code:checked ~ .list .slider{
+  top: 60px;
+  width: 100%;
+}
+
+.content .text-content{
+  width: 80%;
+  height: 100%;
+}
+.content .text{
+  display: none;
+}
+.content .text .title{
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.content .text p{
+  text-align: justify;
+  line-height: 29px;
+}
+.content .text-content .home{
+  display: block;
+}
+
+#home:checked ~ .text-content .home,
+#code:checked ~ .text-content .code{
+  display: block;
+}
+
+#blog:checked ~ .text-content .home,
+#code:checked ~ .text-content .home{
+  display: none;
+}
+
+.content input{
+  display: none;
+}
+
+/*Seccion Mi Perfil*/
+.ContenedorPerfil {
+  width: 99%;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  box-shadow: var(--colorContenedorArticulos);
+}
+
+.Informacion__Perfil {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0;
+  padding: 1rem;
+  background: var(--colorTexto);
+}
+
+.Perfil__BG {
+  width: 100%;
+  height: 20rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: rgb(46, 46, 46);
+}
+
+.Perfil__BG img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(15px);
+}
+
+.Perfil__BG .CapaColor {
+  position: absolute;
+  background: linear-gradient(rgba(26, 26, 26, 0), rgba(19, 19, 19, 0.822));
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.Perfil__Imagen__Bordes {
+  position: relative;
+  width: 11rem;
+  height: 11rem;
+  margin: 0 auto;
+  top: -5.5rem;
+  background: linear-gradient(to bottom right, #439cfb, #595cff);
+  border-radius: 50%;
+}
+
+.Perfil__Imagen {
+  width: 10rem;
+  height: 10rem;
+  margin: 0.5rem 0.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.Perfil__Imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Perfil__Settings,
+.Boton__Editar__Imagen {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #595cff;
+  background: var(--colorTexto);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 8px;
+  border-radius: 500px;
+  line-height: 0;
+  transition: 0.3s;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.Perfil__Settings:hover,
+.Boton__Editar__Imagen:hover {
+  color: var(--colorTexto);
+  background: var(--colorBotones);
+}
+
+.Perfil__Settings span,
+.Boton__Editar__Imagen span {
+  font-size: 1.3rem;
+}
+
+.Perfil__Nombre {
+  width: 320px;
+  text-align: center;
+  position: relative;
+  left: -4rem;
+  top: 5px;
+}
+
+.Perfil__Nombre h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.7rem;
+  margin-bottom: 3px;
+}
+
+.Perfil__Nombre .Perfil__ID {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.Perfil__Nombre .Perfil__Correo {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.Contenedor__Perfil__Social {
+  width: 340px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.Perfil__Estadisticas {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: var(--colorContenedorFOOTER);
+}
+
+.Estadisticas__Seguidores,
+.Estadisticas__Cursos,
+.Estadisticas__Retos {
+  padding: 3px;
+  width: 100%;
+  background: var(--colorTexto);
+  text-align: center;
+}
+
+.Estadisticas__Seguidores p,
+.Estadisticas__Cursos p,
+.Estadisticas__Retos p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--colorBotones);
+}
+
+.Estadisticas__Seguidores .span,
+.Estadisticas__Cursos .span,
+.Estadisticas__Retos .span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 14px;
+  color: #0c0c0ca6;
+}
+
+.Perfil__Social__Botones {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0px;
+}
+
+.Perfil__BotonesSocial {
+  font-size: 1rem;
+  font-weight: 500;
+  background: var(--colorBotones);
+  color: var(--colorTexto);
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  border-radius: 4px;
+  margin: 0 5px;
+  transition: 0.3s;
+
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.Perfil__BotonesSocial:hover {
+  box-shadow: var(--colorBotonesHover);
+}
+
+.Perfil__Cursos,
+.Perfil__Retos,
+.Perfil__Follow {
+  width: 100%;
+  padding: 40px 0px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.Perfil__Cursos__Titulo,
+.Perfil__Retos__Titulo,
+.Perfil__Follow__Titulo {
+  width: 100%;
+}
+
+.Perfil__Cursos__Titulo h2,
+.Perfil__Retos__Titulo h2,
+.Perfil__Follow__Titulo h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--colorBotones);
+  text-align: center;
+}
+
+.Perfil__Cursos__Completados,
+.Perfil__Retos__Completados {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.Reto__Imagen {
+  height: 200px;
+}
+
+.Reto__Imagen span {
+  background: var(--colorBotones);
+  color: var(--colorTexto);
+}
+
+.Reto__Titulo,
+.Reto__Texto,
+.Reto__Dificultad {
+  width: 100%;
+}
+
+.Reto__Titulo h2 {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+  margin: 10px 0px;
+}
+
+.Reto__Texto p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  text-align: justify;
+  color: var(--colorTextoBlog);
+  margin-bottom: 10px;
+}
+
+.Reto__Dificultad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.Reto__Dificultad span {
+  font-size: 4rem;
+  line-height: 0.5rem;
+  padding: 2px;
+  border-radius: 500px;
+  color: #dbe5e6;
+  background: #dbe5e6;
+}
+
+#MuyFacil span:nth-child(1) {
+  color: #00afb9;
+  background: #00afb9;
+}
+
+#Facil span:nth-child(1),
+#Facil span:nth-child(2) {
+  color: #06d6a0;
+  background: #06d6a0;
+}
+
+#Mediano span:nth-child(1),
+#Mediano span:nth-child(2),
+#Mediano span:nth-child(3) {
+  color: #ffd166;
+  background: #ffd166;
+}
+
+#Moderado span:nth-child(1),
+#Moderado span:nth-child(2),
+#Moderado span:nth-child(3),
+#Moderado span:nth-child(4) {
+  color: #ee6c4d;
+  background: #ee6c4d;
+}
+
+#Dificil span:nth-child(1),
+#Dificil span:nth-child(2),
+#Dificil span:nth-child(3),
+#Dificil span:nth-child(4),
+#Dificil span:nth-child(5) {
+  color: #ef476f;
+  background: #ef476f;
+}
+
+.Perfil__Follow__Lista {
+  width: 99%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1rem;
+}
+
+.Perfil__Follow__Lista a {
+  width: 100%;
+  height: 16rem;
+  background: #595cff;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.Perfil__Follow__Lista a:hover {
+  box-shadow: var(--colorBotonesHover);
+}
+
+.Follow__Imagen__Bordes,
+.Editar__Informacion__Bordes {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  margin: 20px auto;
+  top: 0;
+  background: var(--colorTexto);
+  border-radius: 50%;
+}
+
+.Follow__Imagen,
+.Editar__Informacion__Imagen {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  top: 0.5rem;
+  left: 0.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.Follow__Imagen img,
+.Editar__Informacion__Imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Follow__Nombre {
+  padding-top: 1.4rem;
+  width: 100%;
+}
+
+.Follow__Nombre h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  text-align: center;
+  color: var(--colorTexto);
+}
+
+.Follow__ID {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--colorTexto);
+}
+
+.Editar__Informacion {
+  width: 100%;
+  padding: 1px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.Editar__Informacion form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.Editar__Informacion__Formulario {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.Contenedor__boton {
+  width: 100%;
+}
+
+.Contenedor__boton input {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form__div {
+  position: relative;
+  height: 3rem;
+  margin-bottom: 2rem; /*Espacio entre input*/
+}
+
+.form__input {
+  position: absolute;
+  top: 1rem;
+  left: 0rem;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  color: #000;
+  border: 2px solid var(--colorBotones);
+  border-radius: 0.3rem;
+  outline: none;
+  padding: 1rem;
+  background: var(--colorBG__Input);
+  z-index: 1;
+}
+
+.form__label {
+  position: absolute;
+  top: -0.8rem;
+  left: 0rem;
+  padding: 0.25rem;
+  background: var(--colorTexto);
+  color: var(--colorBotones);
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.Contenedor__boton {
+  width: 100%;
+  padding: 10px;
+  grid-column-start: span 2;
+  text-align: center;
+}
+
+.form__boton {
+  padding: 0.7rem 6vw;
+  outline: none;
+  border: none;
+  background: var(--colorBotones);
+  color: var(--colorTexto);
+  font-size: 1.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  margin-top: 20px;
+  -webkit-appearance: none;
+}
+
+#Settings__Nombre,
+#Settings__Apellido,
+#Settings__Email,
+#Settings__Password,
+#Settings__NewPassword,
+#Settings__ConfirmNewPassword {
+  grid-column-start: span 2;
+}
+
+.Editar__Informacion__Alertas {
+  width: 100%;
+}
+
+.Error__EditarInfo {
+  padding: 1rem;
+  margin: 0.5rem 0px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #bb193f;
+  background: #df8096;
+  border: 3px solid #ef476f;
+  border-radius: 8px;
+}
+
+.Completado__EditarInfo {
+  padding: 1rem;
+  margin: 0.5rem 0px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #168aad;
+  background: #99d98c;
+  border: 3px solid #168aad;
+  border-radius: 8px;
+}
+
+.Editar__Informacion__Bordes {
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(to bottom right, #439cfb, #595cff);
+}
+
+.Editar__Informacion__Imagen {
+  width: 7rem;
+  height: 7rem;
+}
+
+.Boton__Editar__Imagen {
+  right: 5px;
+  top: 5px;
+  z-index: 1;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1500px) {
+  .ListadoCursos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .Perfil__Cursos__Completados,
+  .Perfil__Retos__Completados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #ListaChallenges{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .Perfil__Follow__Lista {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .Articulo__Template {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .ListadoCursos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .Perfil__Follow__Lista {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  #Settings__Nombre,
+  #Settings__Apellido,
+  #Settings__Email,
+  #Settings__Password,
+  #Settings__NewPassword,
+  #Settings__ConfirmNewPassword {
+    grid-column-start: span 3;
+  }
+
+  .Articulo__Template {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .ListadoCursos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Perfil__Cursos__Completados,
+  .Perfil__Retos__Completados {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Perfil__Follow__Lista {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .home .title,
+  .code .title{
+    display: none;
+  }
+}
+
+@media (max-width: 893px) {
+  .Articulo__Template {
+    width: 95%;
+  }
+
+  .Template__Titulo h1 {
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+
+  .Template__Fecha span {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .Template__KeyWords a {
+    font-size: 0.7rem;
+  }
+
+  .Template__Texto {
+    margin-top: 1rem;
+  }
+
+  .Template__Texto p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .Template__Texto h2 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .Template__Imagen {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  #Settings__Nombre,
+  #Settings__Apellido,
+  #Settings__Email,
+  #Settings__Password,
+  #Settings__NewPassword,
+  #Settings__ConfirmNewPassword {
+    grid-column-start: span 6;
+  }
+
+  .Articulo__Template{
+    margin: 80px auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    position: relative;
+    margin: var(--AlturaHeader) 0 0 0;
+    padding: 0 1rem;
+  }
+
+  .header {
+    height: 3rem;
+    padding: 0 1rem;
+  }
+
+  .perfil__img {
+    width: 39px;
+    height: 39px;
+    padding-top: 2px;
+  }
+
+  .header__img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .header__img img {
+    width: 40px;
+  }
+
+  .l-navbar {
+    left: -30%;
+    padding: 0.5rem 1rem 0 0;
+    width: var(--AnchuraNAV);
+  }
+
+  .show {
+    left: 0;
+  }
+
+  .body-pd {
+    padding-left: calc(var(--AnchuraNAV) + 1rem);
+  }
+
+  .Perfil__Follow__Lista {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .Articulo__Template{
+    margin: 60px auto;
+    width: 98%;
+  }
+
+  .ListadoCursos {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Perfil__BG {
+    height: 12rem;
+  }
+
+  .Informacion__Perfil {
+    padding: 0;
+  }
+
+  .Reto__Dificultad {
+    gap: 2px;
+  }
+
+  .Reto__Dificultad span {
+    font-size: 0px;
+    padding: 0px;
+  }
+
+  .Perfil__Follow__Lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form__div {
+    margin-bottom: 1rem;
+  }
+
+  .form__label {
+    top: -0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .Articulo__Template {
+    padding: 20px;
+  }
+
+  .Template__Titulo h1 {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+
+  .Template__Texto h1 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .Template__Texto h2 {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .Template__Texto h3 {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  p img {
+    width: 100%;
+  }
+
+  .accordian .card .card-header h3{
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .accordian .card .card-body p a{
+    font-size: 14px;
+  }
+
+  .content .list{
+    margin-right: 10px;
+  }
+
+  .content .list label{
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--MetaEtiquetas-->
+    <meta name="author" content="SEES.WebDevelopers">
+    <meta name="description" content="Preguntas Frecuentes DisCode">
+    <meta name="keywords" content="DisCode, FAQS, FAQ, DisCode FAQS, Preguntas, Frecuentes, Preguntas Frecuentes">
+
+    <title>Preguntas Frecuentes DisCode</title>
+
+    <!--Favicon-->
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2Fdiscode_favicon.ico?v=1619411013899"
+      type="image/x-icon"
+    />
+
+    <!--Estilos CSS-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+      /*    Variables   */
+      :root {
+        --colorContenedorUNO: #3f37c9;
+        --colorContenedorDOS: #4c3eed;
+        --colorContenedorNAV: #4c66e6;
+        --colorContenedorFOOTER: #1b2739;
+        --colorContenedorMenuResponsivo: #0f243586;
+
+        --colorTexto: #ffffff;
+        --colorTextoBlog: #515151;
+        --colorHipervinculos: #2647f8;
+        --colorHipervinculosMenu: #fd583a;
+
+        --primario: #4361ee;
+        --gris-texto: #79828d;
+        --gris-claro: #a3a3a3;
+        --sombra: 0 0 13px 0 rgba(185,185,185, 0.25);
+        --sombra2: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+
+        /*Paleta de Colores*/
+        --color3049F6: #3049f6;
+        --color3840e0: #3840e0;
+        --color3f37c9: #3f37c9;
+        --color4c3eed: #4c3eed;
+        --color3a0ca3: #3a0ca3;
+        --color2b1a6e: #2b1a6e;
+        --color1b2739: #1b2739;
+        --colorBotones: #4361ee;
+        --colorBotonesHover: #4c66e669 0px 2px 4px 0px, #4c66e6a8 0px 2px 16px 0px;
+        --colorBG: #eff0f2;
+        --colorTyped: #d9ff00;
+        --colorContenedorArticulos: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+        --FontUbuntu: "Ubuntu", sans-serif;
+        --FontSourceSansPro: "Source Sans Pro", sans-serif;
+        --FontNunito: 'Nunito', sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f8fafb;
+      }
+
+      /*          HEADER           */
+
+      header {
+        position: fixed;
+        width: 100%;
+        padding: 10px;
+        background: var(--colorContenedorNAV);
+        box-sizing: border-box;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+      }
+
+      .logo {
+        color: var(--colorTexto);
+        height: 50px;
+        font-size: 36px;
+        line-height: 60px;
+        padding: 0 20px;
+        text-align: center;
+        box-sizing: border-box;
+        float: left;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      nav {
+        float: right;
+      }
+
+      .clearfix {
+        clear: both;
+      }
+
+      nav ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        list-style: none;
+        margin: 0 6px;
+      }
+
+      nav ul li a {
+        display: block;
+        margin: 10px 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: var(--colorTexto);
+        border-radius: 4px;
+        font-weight: 400;
+      }
+
+      nav ul li a:hover {
+        transition: 0.5s;
+      }
+
+      .btn_normal:hover {
+        background: var(--colorTexto);
+        color: var(--colorBotones);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+          rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+      }
+
+      .btn_login {
+        box-shadow: inset 0 0 0 3px var(--colorTexto);
+      }
+
+      .btn_register {
+        background: var(--colorTexto);
+        color: var(--colorBotones);
+        padding: 10px 30px;
+      }
+
+      .btn_login:hover {
+        background: var(--colorTexto);
+        color: var(--colorBotones);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+          rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+      }
+
+      .btn_register:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+          rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+      }
+
+      /*          MAIN           */
+      main {
+          padding-top: 50px;
+          font-family: var(--FontNunito);
+
+          max-width: 1000px;
+          width: 90%;
+          margin: 0px auto 80px;
+      }
+
+      .titulo{
+        font-family: var(--FontUbuntu);
+        color: #3a3a3a;
+        font-weight: 800;
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      .categorias{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .categoria{
+        cursor: pointer;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        background: #fff;
+        font-weight: 700;
+        color: var(--gris-claro);
+        border: 2px solid transparent;
+        transition: 0.3s ease all;
+      }
+
+      .categoria:hover{
+        box-shadow: var(--sombra2);
+        color: var(--primario);
+      }
+
+      .categoria span{
+        font-size: 5rem;
+      }
+
+      .categoria__titulo{
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      .categoria__parrafo{
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+
+      .categoria.activa{
+        border: 3px solid var(--primario);
+        color: var(--primario);
+      }
+
+      .contenedor__preguntas{
+        display: none;  /*grid*/
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contenedor__preguntas.activo{
+        display: grid;
+      }
+
+      .contenedor__pregunta{
+        background: #fff;
+        padding: 40px;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: 0.3 ease all;
+        cursor: pointer;
+      }
+
+      .contenedor__pregunta:hover{
+        box-shadow: var(--sombra2);
+
+      }
+
+      .contenedor__pregunta.activa{
+        border: 3px solid var(--primario);
+      }
+
+      .pregunta{
+        font-weight: 700;
+        font-size: 1.3rem;
+        line-height: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .pregunta span{
+        font-size: 1.8rem;
+      }
+
+      .respuesta{
+        width: 100%;
+        color: #808080;
+        max-height: 0;
+        opacity: 0;
+        transition: 0.3s ease all;
+      }
+
+      .respuesta p{
+        font-size: 1rem;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+
+      .respuesta img{
+        max-width: 100%;
+      }
+
+      .contenedor__pregunta.activa .respuesta{
+        opacity: 1;
+        margin-top: 20px;
+      }
+
+      .contenedor__pregunta.activa span.material-icons{
+        transform: rotate(45deg);
+      }
+
+
+      /*          FOOTER           */
+      footer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        height: auto;
+        background: var(--colorContenedorFOOTER);
+      }
+
+      footer .Contenedor-Footer {
+        margin-left: 20%;
+        width: 60%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: auto;
+      }
+
+      .footer__logotipo {
+        width: 100%;
+      }
+
+      .footer__logotipo label.footer__logo {
+        font-size: 35px;
+        line-height: 120px;
+        font-weight: 500;
+      }
+
+      .footer__logotipo label.footer__logo a {
+        text-decoration: none;
+        color: var(--colorTexto);
+        transition: all 0.3s;
+      }
+
+      .footer__links {
+        width: 100%;
+        text-align: center;
+      }
+
+      .footer__links ul {
+        list-style: none;
+      }
+
+      .footer__links ul li {
+        display: inline-block;
+        line-height: 120px;
+        margin: 0 1vh;
+      }
+
+      .footer__links ul li a {
+        color: var(--colorTexto);
+        font-size: 18px;
+        font-weight: 300;
+        transition: all 0.3s;
+      }
+
+      .footer__sm {
+        width: 100%;
+        text-align: right;
+      }
+
+      .footer__sm ul {
+        list-style: none;
+      }
+
+      .footer__sm ul li {
+        display: inline-block;
+        line-height: 120px;
+        margin: 0 1vh;
+      }
+
+      .footer__sm ul li a {
+        text-decoration: none;
+        color: var(--colorContenedorFOOTER);
+        background: var(--colorTexto);
+        font-size: 24px;
+        border-radius: 500px;
+        transition: all 0.3s;
+      }
+
+      .facebook {
+        padding: 10px 20px;
+      }
+
+      .twitter {
+        padding: 10px 15px;
+      }
+
+      .linkedin {
+        padding: 10px 17px;
+      }
+
+      .instagram {
+        padding: 10px 16px;
+      }
+
+      .footer__logotipo label.footer__logo a:hover,
+      .footer__links ul li a:hover {
+        color: var(--colorHipervinculos);
+      }
+
+      .facebook:hover,
+      .twitter:hover,
+      .instagram:hover,
+      .linkedin:hover {
+        background: var(--colorHipervinculos);
+        color: var(--colorTexto);
+      }
+
+      .footer__copyright {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .footer__copyright span {
+        color: var(--colorTexto);
+        font-size: 17px;
+        font-weight: 400;
+      }
+
+      @media (max-width: 1200px) {
+        footer .Contenedor-Footer {
+          grid-template-columns: repeat(1, 1fr);
+          height: auto;
+        }
+
+        .footer__logotipo,
+        .footer__links,
+        .footer__sm {
+          text-align: center;
+        }
+
+        .footer__logotipo label.footer__logo {
+          line-height: 80px;
+        }
+
+        .footer__links ul li {
+          line-height: 20px;
+        }
+
+        .footer__sm ul li {
+          line-height: 100px;
+        }
+
+        .footer__copyright {
+          padding: 0px 0px 20px 0px;
+        }
+      }
+
+      @media (max-width: 910px) {
+        .menu-toggle {
+          display: block;
+          width: 40px;
+          height: 40px;
+          margin: 10px;
+          float: right;
+          cursor: pointer;
+          text-align: center;
+          font-size: 30px;
+          color: var(--colorTexto);
+        }
+
+        .menu-toggle:hover {
+          color: var(--colorHipervinculosMenu);
+        }
+
+        .menu-toggle::before {
+          content: "\f0c9";
+          /*\f00d*/
+          font-family: FontAwesome;
+          line-height: 40px;
+        }
+
+        .menu-toggle.active::before {
+          content: "\f00d";
+        }
+
+        .btn_login,
+        .btn_register {
+          box-shadow: none;
+          background: none;
+          color: var(--colorTexto);
+        }
+
+        .btn_register:hover {
+          box-shadow: none;
+          background: var(--colorTexto);
+          color: var(--colorBotones);
+        }
+
+        nav {
+          display: none;
+        }
+
+        nav.active {
+          display: block;
+          width: 100%;
+        }
+
+        nav.active ul {
+          display: block;
+        }
+
+        nav.active ul li a {
+          margin: 0;
+          text-align: center;
+        }
+      }
+
+      @media screen and (max-width: 910px){
+        .categorias{
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .categoria{
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 5px;
+        }
+
+        .categoria__parrafo{
+          display: none;
+        }
+
+        .categoria__titulo{
+          margin: 0;
+          line-height: 1.5rem;
+          font-weight: 700;
+          width: 100%;
+          font-size: 1.2rem;
+        }
+
+        .categoria span{
+          font-size: 4rem;
+          margin-left: 0px;
+        }
+      }
+
+      @media screen and (max-width: 500px){
+        .titulo{
+          margin: 30px 0;
+        }
+
+        .categorias{
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .categoria__titulo{
+          margin: 0;
+          line-height: 1.2rem;
+          font-weight: 700;
+          width: 100%;
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .main__titulo h1 {
+          font-size: 2rem;
+          line-height: 2.2rem;
+          font-weight: 600;
+        }
+
+        .main__titulo span {
+          font-size: 1rem;
+          font-weight: 300;
+        }
+
+        .footer__links ul li {
+          margin: 0px 1vw;
+        }
+
+        .footer__links ul li a {
+          font-size: 14px;
+        }
+
+        .footer__sm ul li {
+          margin: 0 1vw;
+        }
+
+        .footer__sm ul li a {
+          font-size: 14px;
+        }
+
+        .facebook {
+          padding: 5px 10px;
+        }
+
+        .twitter {
+          padding: 5px 7px;
+        }
+
+        .linkedin {
+          padding: 5px 9px;
+        }
+
+        .instagram {
+          padding: 5px 8px;
+        }
+      }
+
+    </style>
+
+    <!--Kit Iconos FontAwesome-->
+    <script
+      src="https://kit.fontawesome.com/acd423b58e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Kit Iconos Material Icon-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!--Kit Iconos Box Icons-->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!--Asset para efecto Typed-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  </head>
+
+  <!--  -->
+
+  <body>
+    <!--      HEADER      -->
+    <header>
+      <!-- Label DisCode & Botón NAV Responsivo -->
+      <a href="{% url 'index' %}" class="logo">DisCode</a>
+      <div class="menu-toggle"></div>
+
+      <!-- Menu de navegación -->
+      <nav>
+        <ul>
+          <li><a href="{% url 'blog' %}" class="btn_normal">Blog</a></li>
+          <li><a href="{% url 'login' %}" class="btn_login">Iniciar Sesión</a></li>
+          <li><a href="{% url 'register' %}" class="btn_register">Regístrarse</a></li>
+        </ul>
+      </nav>
+      <div class="clearfix"></div>
+    </header>
+
+    <!--      MAIN      -->
+    <span class="material-icons">accessibility_new</span>
+    <main>
+      <h1 class="titulo">¿Necesitas Ayuda?</h1>
+
+      <div class="categorias" id="categorias">
+
+        <div class="categoria activa" data-categoria="faqs">
+          <span class="material-icons">help_outline</span>
+          <p class="categoria__titulo">F.A.Q.s</p>
+          <p class="categoria__parrafo">Soluciones rápidas</p>
+        </div>
+
+        <div class="categoria" data-categoria="interfaz">
+          <span class="material-icons">important_devices</span>
+          <p class="categoria__titulo">Interfaz de DisCode</p>
+          <p class="categoria__parrafo">¿Qué hace este botón?</p>
+        </div>
+
+        <div class="categoria" data-categoria="beginners">
+          <span class="material-icons">face</span>
+          <p class="categoria__titulo">¿Cómo Empezar?</p>
+          <p class="categoria__parrafo">
+            Comienza tu aprendizaje en línea de la manera correcta
+          </p>
+        </div>
+
+        <div class="categoria" data-categoria="extras">
+          <span class="material-icons">question_answer</span>
+          <p class="categoria__titulo">Atención al Cliente Personalizada</p>
+          <p class="categoria__parrafo">Contactanos a traves de nuestras Redes Sociales</p>
+        </div>
+
+      </div>
+
+      <div class="preguntas">
+
+      {% if faqs %}
+
+          <!--FAQS-->
+          <div class="contenedor__preguntas activo" data-categoria="faqs">
+            {% for faqs in faqs %}
+              {% if faqs.categoria.nombre == 'faqs' %}
+                <div class="contenedor__pregunta">
+                  <p class="pregunta">
+                    {{ faqs.pregunta }}<span class="material-icons">add</span>
+                  </p>
+                  <div class="respuesta">
+                    {{ faqs.respuesta | safe }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+
+          <!--INTERFAZ-->
+          <div class="contenedor__preguntas" data-categoria="interfaz">
+            {% for faqs in faqs %}
+              {% if faqs.categoria.nombre == 'interfaz' %}
+                <div class="contenedor__pregunta">
+                  <p class="pregunta">
+                    {{ faqs.pregunta }}<span class="material-icons">add</span>
+                  </p>
+                  <div class="respuesta">
+                    {{ faqs.respuesta | safe }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+
+          <!--BEGINNERS-->
+          <div class="contenedor__preguntas" data-categoria="beginners">
+            {% for faqs in faqs %}
+              {% if faqs.categoria.nombre == 'beginners' %}
+                <div class="contenedor__pregunta">
+                  <p class="pregunta">
+                    {{ faqs.pregunta }}<span class="material-icons">add</span>
+                  </p>
+                  <div class="respuesta">
+                    {{ faqs.respuesta | safe }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+
+          <!--EXTRAS-->
+          <div class="contenedor__preguntas" data-categoria="extras">
+            {% for faqs in faqs %}
+              {% if faqs.categoria.nombre == 'extras' %}
+                <div class="contenedor__pregunta">
+                  <p class="pregunta">
+                    {{ faqs.pregunta }}<span class="material-icons">add</span>
+                  </p>
+                  <div class="respuesta">
+                    {{ faqs.respuesta | safe }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+      {% else %}
+        <h2 style="text-align:center; color:#fd583a; font-family: Arial, Helvetica, sans-serif;">No se encontro ninguna pregunta</h2>
+      {% endif %}
+      </div>
+    </main>
+
+    <!--      FOOTER      -->
+    <footer>
+      <section class="Contenedor-Footer">
+        <div class="footer__logotipo">
+          <label for="DisCode" class="footer__logo"
+            ><a href="{% url 'index' %}">DisCode</a></label
+          >
+        </div>
+        <div class="footer__links">
+          <ul>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="{% url 'faqs' %}">FAQ's</a></li>
+          </ul>
+        </div>
+        <div class="footer__sm">
+          <ul>
+            <li>
+                <a href="https://www.facebook.com/DisCode-108177781417403" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/Discode11" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/_discode_/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+              </li>
+          </ul>
+        </div>
+      </section>
+      <div class="footer__copyright">
+        <span>© SEES.WEBDEVELOPERS 2021</span>
+      </div>
+    </footer>
+
+    <!--      SCRIPTS      -->
+
+    <!--Contenedores ¿Necesitas Ayuda?-->
+    <script>
+        const categorias = document.querySelectorAll('#categorias .categoria');
+        const contenedorPreguntas = document.querySelectorAll('.contenedor__preguntas');
+
+        let categoriaActiva = null;
+
+        categorias.forEach((categoria) => {
+            categoria.addEventListener('click', (e) => {
+                categorias.forEach((elemento) => {
+                    elemento.classList.remove('activa');
+                })
+                e.currentTarget.classList.toggle('activa');
+                categoriaActiva = categoria.dataset.categoria;
+
+
+                // Activar Contenedor de Preguntas que corresponda
+                contenedorPreguntas.forEach((contenedor) => {
+                    if (contenedor.dataset.categoria === categoriaActiva){
+                        contenedor.classList.add('activo');
+                    } else {
+                        contenedor.classList.remove('activo');
+                    }
+                });
+            });
+        });
+
+    </script>
+
+    <!--Preguntas Frecuentes-->
+    <script>
+        const preguntas = document.querySelectorAll('.preguntas .contenedor__pregunta');
+
+        preguntas.forEach((pregunta) => {
+            pregunta.addEventListener('click', (e) => {
+                e.currentTarget.classList.toggle('activa');
+
+
+                const respuesta = pregunta.querySelector('.respuesta');
+                const alturaRealRespuesta = respuesta.scrollHeight;
+
+                if(!respuesta.style.maxHeight){
+                    // Si esta vacio el maxHeight entonces ponemos un valor.
+                    respuesta.style.maxHeight = alturaRealRespuesta + 'px';
+                } else{
+                    respuesta.style.maxHeight = null;
+                }
+
+                preguntas.forEach((elemento) => {
+                    // Solamente queremos ejecutar el codigo para 
+                    // las preguntas que no sea la pregunta a la que le dimos click
+                    if (pregunta !== elemento){
+                        elemento.classList.remove('activa');
+                        elemento.querySelector('.respuesta').style.maxHeight = null;
+                    }
+                });
+
+            });
+        });
+
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".menu-toggle").click(function () {
+          $(".menu-toggle").toggleClass("active");
+          $("nav").toggleClass("active");
+        });
+      });
+
+      $(document).ready(function () {
+        $("header nav ul li a").click(function () {
+          $(".menu-toggle").toggleClass("active");
+          $("nav").toggleClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

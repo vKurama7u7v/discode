@@ -1,8 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Post, Categoria
+from discodefaqs.models import Faqs
+from discodecurso.models import CategoriaCurso, Curso, Tema, Leccion
+from discoderetos.models import Dificultad, CategoriaReto, Challenge
+from discodesocial.models import Profile, Publicacion
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.contrib import messages
+from .forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
@@ -11,12 +18,82 @@ def index(request):
     )
     return render(request, 'index.html', {'posts':posts})
 
-def login(request):
-    return render(request, 'registration/login.html')
-
 def register(request):
-    return render(request, 'registration/register.html')
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
 
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            messages.success(request, f'Usuario {username} creado')
+            return redirect('home')
+
+    else:
+        form = UserRegisterForm()
+
+    context = {'form': form}
+    return render(request, 'registration/register.html', context)
+
+
+###############   FAQS    #################
+def faqs(request):
+    faqs = Faqs.objects.filter(estado = True)
+    return render(request, 'faqs.html', {'faqs':faqs})
+
+
+
+###############   CURSOS    #################
+@login_required
+def home(request):
+    cursos = Curso.objects.filter(estado = True)
+    return render(request, 'social/home.html', {'curso':cursos})
+
+@login_required
+def cursoinfo(request, slugcurso):
+    temas = Tema.objects.filter(estado = True)
+    lecciones = Leccion.objects.filter(estado = True)
+    curso = get_object_or_404(Curso, slug = slugcurso)
+    return render(request, 'social/aprendizaje/cursoinfo.html', {'detalle_curso':curso, 'detalle_tema':temas, 'leccion':lecciones})
+
+@login_required
+def leccioninfo(request, slugleccion):
+    leccion = get_object_or_404(Leccion, slug = slugleccion)
+    lecciones = Leccion.objects.filter(estado = True)
+    return render(request, 'social/aprendizaje/leccion.html', {'leccion':leccion, 'lecciones':lecciones})
+
+
+
+###############   COMUNIDAD   #################
+@login_required
+def feed(request):
+    publicacion = Publicacion.objects.filter(estado = True)
+
+    context = {'publicacion': publicacion}
+    return render(request, 'social/discodesocial/feed.html', context)
+
+
+
+###############   CHALLENGES   #################
+@login_required
+def challenge(request):
+    retos = Challenge.objects.filter(estado = True)
+    return render(request, 'social/challenge.html', {'reto':retos})
+
+@login_required
+def detalle_challenge(request, slug):
+    reto = get_object_or_404(Challenge, slug = slug)
+    return render(request, 'social/challenge/detalle_challenge.html', {'detalle_challenge':reto})
+
+
+
+###############   SOCIAL    #################
+@login_required
+def miperfil(request):
+    return render(request, 'social/miperfil.html')
+
+
+
+###############   BLOG    #################
 def blog(request):
     queryset = request.GET.get("buscar")
     posts = Post.objects.filter(estado = True)
@@ -83,4 +160,3 @@ def how_to(request):
     )
     
     return render(request, 'how-to.html', {'posts':posts})
-

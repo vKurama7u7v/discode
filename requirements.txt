@@ -11,7 +11,8 @@ dj-static==0.0.6
 Django==3.1.7
 django-allauth==0.44.0
 django-ckeditor==6.0.0
--e git+https://github.com/django-import-export/django-import-export.git@722c376e476f0a9b5252c21d4cf788c9bdd1bdd8#egg=django_import_export
+# Editable install with no version control (django-import-export==2.5.0)
+-e /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages
 django-js-asset==1.2.2
 et-xmlfile==1.0.1
 gunicorn==20.1.0

@@ -5,6 +5,7 @@ from import_export.admin import ImportExportModelAdmin
 
 # Register your models here.
 
+###############   CATEGORIA    #################
 class CategoriaResource(resources.ModelResource):
     class Meta:
         model = Categoria
@@ -15,6 +16,7 @@ class CategoriaAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     resource_class = CategoriaResource
 
 
+###############   AUTOR    #################
 class AutorResource(resources.ModelResource):
     class Meta:
         model = Autor
@@ -25,6 +27,7 @@ class AutorAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     resource_class = AutorResource
 
 
+###############   POST    #################
 class PostResource(resources.ModelResource):
     class Meta:
         model = Post
@@ -38,3 +41,4 @@ class PostAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Autor, AutorAdmin)
 admin.site.register(Post, PostAdmin)
+

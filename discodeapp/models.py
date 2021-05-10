@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 # Create your models here.
+
+###############   BLOG    #################
+
 class Categoria(models.Model):
     id = models.AutoField(primary_key = True)
     nombre = models.CharField('Nombre de la Categoria', max_length = 100, null = False, blank = False)
@@ -54,8 +57,10 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'post'
         verbose_name_plural = 'posts'
+        ordering = ['-fecha_creacion']
 
     def __str__(self):
         return self.titulo
+
 
 

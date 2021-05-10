@@ -155,6 +155,23 @@
           rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
       }
 
+      .notification {
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+      .success {
+        background: #43DC7E;
+        color: white;
+      }
+      .error {
+        background: #AB3444;
+        color: white;
+        margin-bottom: 20px;
+      }
+
       /*      MAIN       */
       main {
         width: 100%;
@@ -565,6 +582,15 @@
     <main>
       <section class="bg_principal">
         <section class="Contenedor">
+          {% block alerta %}
+            {% if messages %}
+                  {% for message in messages %}
+                    <div class="notification {{ message.tags }}">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+            {% endif %}
+          {% endblock alerta %}
           <div class="Contenedor__btnCerrar">
             <a href="{% url 'index' %}"><span class="material-icons">close</span></a>
           </div>
@@ -582,8 +608,10 @@
               </div>
 
               {% block Grid__Form %}
-              <form action="" class="Grid__Form">
-                <div class="form__div" id="Registrarse__Nombre">
+              <form action="" class="Grid__Form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!-- <div class="form__div" id="Registrarse__Nombre">
                   <input type="text" class="form__input" placeholder=" " />
                   <label for="" class="form__label">Nombre</label>
                 </div>
@@ -601,14 +629,14 @@
                 <div class="form__div" id="Registrarse__Password">
                   <input type="password" class="form__input" placeholder=" " />
                   <label for="" class="form__label">Contraseña</label>
-                </div>
+                </div> -->
 
                 <div class="Contenedor__boton">
-                  <input
+                  <button
                     type="submit"
+                    id="submit"
                     class="form__boton"
-                    value="Regístrarsess"
-                  />
+                    >Regístrarse</button>
                 </div>
               </form>
               {% endblock Grid__Form %}
