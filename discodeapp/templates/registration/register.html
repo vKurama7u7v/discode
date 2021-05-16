@@ -582,15 +582,6 @@
     <main>
       <section class="bg_principal">
         <section class="Contenedor">
-          {% block alerta %}
-            {% if messages %}
-                  {% for message in messages %}
-                    <div class="notification {{ message.tags }}">
-                      {{ message }}
-                    </div>
-                  {% endfor %}
-            {% endif %}
-          {% endblock alerta %}
           <div class="Contenedor__btnCerrar">
             <a href="{% url 'index' %}"><span class="material-icons">close</span></a>
           </div>
@@ -610,26 +601,30 @@
               {% block Grid__Form %}
               <form action="" class="Grid__Form" method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <!-- <div class="form__div" id="Registrarse__Nombre">
-                  <input type="text" class="form__input" placeholder=" " />
-                  <label for="" class="form__label">Nombre</label>
-                </div>
-
-                <div class="form__div" id="Registrarse__Apellido">
-                  <input type="text" class="form__input" placeholder=" " />
-                  <label for="" class="form__label">Apellido</label>
+                <!-- {{ form.as_p }} -->
+                <div class="form__div" id="Registrarse__Email">
+                  {{ form.username }}
+                  <!-- <input type="text" class="form__input" placeholder=" " /> -->
+                  <label for="" class="form__label">Username</label>
                 </div>
 
                 <div class="form__div" id="Registrarse__Email">
-                  <input type="email" class="form__input" placeholder=" " />
+                  {{ form.email }}
+                  <!-- <input type="text" class="form__input" placeholder=" " /> -->
                   <label for="" class="form__label">Email</label>
                 </div>
 
                 <div class="form__div" id="Registrarse__Password">
-                  <input type="password" class="form__input" placeholder=" " />
+                  {{ form.password1 }}
+                  <!-- <input type="email" class="form__input" placeholder=" " /> -->
                   <label for="" class="form__label">Contraseña</label>
-                </div> -->
+                </div>
+
+                <div class="form__div" id="Registrarse__Password">
+                  {{ form.password2 }}
+                  <!-- <input type="password" class="form__input" placeholder=" " /> -->
+                  <label for="" class="form__label">Confirmar Contraseña</label>
+                </div>
 
                 <div class="Contenedor__boton">
                   <button

@@ -337,16 +337,21 @@ main {
   position: relative;
 }
 
-.btnBuscador a {
+.btnBuscador button {
   text-decoration: none;
-  color: var(--colorTexto);
+  background: none;
   position: absolute;
   top: 6px;
   left: 6px;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
-.btnBuscador a span {
+.btnBuscador button span {
   font-size: 2rem;
+  color: var(--colorTexto);
 }
 
 .ContenedorListaCursos {
@@ -477,6 +482,23 @@ a.Item__Curso:hover > div.Curso__Descripcion h2,
 a.Item__Reto:hover > div.Reto__Descripcion h2 {
   color: var(--colorBotones);
   transition: 0.3s;
+}
+
+.notification {
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.success {
+  background: #43DC7E;
+  color: white;
+}
+.error {
+  background: #AB3444;
+  color: white;
+  margin-bottom: 20px;
 }
 
 /*Seccion Detalles Curso*/
@@ -681,6 +703,45 @@ article{
   padding: 20px;
   border-radius: 4px;
   box-shadow: var(--colorContenedorArticulos);
+}
+
+.ComunidadDiscode h1{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--colorBotones);
+}
+
+.form__textarea{
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 2px solid var(--colorBotones);
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  font-family: var(--FontUbuntu);
+  font-size: 15px;
+}
+
+.contenedor__send{
+  width: 100%;
+  text-align: center;
+}
+
+.form__send{
+  padding: 12px 40px;
+  outline: none;
+  border: none;
+  background: var(--colorBotones);
+  color: var(--colorTexto);
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  margin-top: 20px;
+  -webkit-appearance: none;
 }
 
 .Contenedor__PostFeed{
@@ -1638,5 +1699,11 @@ article{
     width: 100%;
     padding-left: 0;
     text-align: center;
+  }
+
+  .ComunidadDiscode h1{
+    font-size: 2rem;
+    line-height: 2.3rem;
+    margin-bottom: 20px;
   }
 }

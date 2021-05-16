@@ -35,7 +35,7 @@ class Curso(models.Model):
     class Meta:
         verbose_name = 'curso'
         verbose_name_plural = 'cursos'
-        ordering = ['-fecha_creacion']
+        ordering = ['-id']
 
     def __str__(self):
         return self.titulo

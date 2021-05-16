@@ -55,7 +55,7 @@ class Challenge(models.Model):
     class Meta:
         verbose_name = 'challenge'
         verbose_name_plural = 'challenges'
-        ordering = ['-fecha_creacion']
+        ordering = ['-id']
 
     def __str__(self):
         return self.titulo

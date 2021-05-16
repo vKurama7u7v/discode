@@ -69,19 +69,20 @@
       </div>
       -->
 
+      {% block myprofile %}
       <div class="right">
         <ul>
           <li>
 
             <!--Mi Perfil-->
             <a href="#">
-              <p>Aurelio MB<br> 
+              <p>@{{ user.username }}<br> 
                 <span>Estudiante</span>
               </p>
               <div class="perfil__img">
                 <div class="header__img">
                   <img
-                    src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FRukiaV1.png?v=1617173701292"
+                    src="{{ user.profile.image.url }}"
                     alt=""
                   />
                 </div>
@@ -93,16 +94,17 @@
             <!--Opciones-->
             <div class="dropdown">
               <ul>
-                <li><a href="perfil-discodeapp.html"><span class="material-icons nav__icon">person</span>Mi Perfil</a></li>
-                <li><a href="notificaciones-discodeapp.html"><span class="material-icons nav__icon">notifications</span>Notificaciones</a></li>
-                <li><a href="miaprendizaje-discodeapp.html"><span class="material-icons nav__icon">bookmark_border</span>Aprendizaje</a></li>
-                <li><a href="settings-discodeapp.html"><span class="material-icons nav__icon">settings</span>Editar Perfil</a></li>
-                <li><a href="login.html"><span class="material-icons nav__icon">logout</span>Cerrar Sesión</a></li>
+                <li><a href="{% url 'profile' user.username %}"><span class="material-icons nav__icon">person</span>Mi Perfil</a></li>
+                <li><a href="#"><span class="material-icons nav__icon">notifications</span>Notificaciones</a></li>
+                <li><a href="#"><span class="material-icons nav__icon">bookmark_border</span>Aprendizaje</a></li>
+                <li><a href="{% url 'settings' %}"><span class="material-icons nav__icon">settings</span>Editar Perfil</a></li>
+                <li><a href="{% url 'logout' %}"><span class="material-icons nav__icon">logout</span>Cerrar Sesión</a></li>
               </ul>
             </div>
           </li>
         </ul>
       </div>
+      {% endblock myprofile %}
     </header>
 
    
@@ -131,14 +133,14 @@
               <span class="nav__name">Retos</span>
             </a>
 
-            <a href="{% url 'miperfil' %}" class="nav__link {% block miperfil %}{% endblock miperfil %}">
+            <a href="{% url 'profile' %}" class="nav__link {% block miperfil %}{% endblock miperfil %}">
               <span class="material-icons nav__icon">person</span>
               <span class="nav__name">Mi Perfil</span>
             </a>
           </div>
         </div>
 
-        <a href="login.html" class="nav__link">
+        <a href="{% url 'logout' %}" class="nav__link">
           <span class="material-icons nav__icon">logout</span>
           <span class="nav__name">Cerrar Sesión</span>
         </a>
@@ -148,7 +150,14 @@
 
     <!-- ====== MAIN ===== -->
     <main>
-      {% block Main %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="notification {{ message.tags }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% block Main %} 
       <section class="GridCursos">
         <div class="Seccion__Titulo">
           <h1>Cursos Online</h1>
@@ -156,15 +165,18 @@
 
         <!-- Modificar por seccion -->
         <!--Buscador-->
+        
         <div class="ContBuscar">
-          <div class="Buscador">
-            <div class="btnBuscador">
-              <a href="#">
-                <span class="material-icons">search</span>
-              </a>
+          <form method="GET">
+            <div class="Buscador">
+              <div class="btnBuscador">
+                <button type="submit">
+                  <span class="material-icons">search</span>
+                </button>
+              </div>
+              <input type="text" name="buscarcurso" placeholder="Buscador" value="{{ request.GET.buscarcurso }}"/>
             </div>
-            <input type="text" name="box" placeholder="Buscador" />
-          </div>
+          </form>
         </div>
 
         <section class="ContenedorListaCursos">
@@ -204,7 +216,7 @@
             </section>
           {% else %}
             <div class="ListaCursosSubTitulo">
-              <h2>No hay Cursos Disponibles</h2>
+              <h2 style="color:darkorange">No se encontro ningun Curso disponible</h2>
             </div>
           {% endif %}
         </section>

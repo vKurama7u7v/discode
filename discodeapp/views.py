@@ -1,15 +1,16 @@
 from django.shortcuts import render, redirect
-from .models import Post, Categoria
+from .models import *
 from discodefaqs.models import Faqs
 from discodecurso.models import CategoriaCurso, Curso, Tema, Leccion
 from discoderetos.models import Dificultad, CategoriaReto, Challenge
-from discodesocial.models import Profile, Publicacion
+from discodesocial.models import Profile, Publicacion, Relationship
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, PostForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 # Create your views here.
 
 def index(request):
@@ -35,6 +36,7 @@ def register(request):
     return render(request, 'registration/register.html', context)
 
 
+
 ###############   FAQS    #################
 def faqs(request):
     faqs = Faqs.objects.filter(estado = True)
@@ -45,8 +47,15 @@ def faqs(request):
 ###############   CURSOS    #################
 @login_required
 def home(request):
+    queryset = request.GET.get("buscarcurso")
     cursos = Curso.objects.filter(estado = True)
-    return render(request, 'social/home.html', {'curso':cursos})
+
+    #Busqueda
+    if queryset:
+        cursos = Curso.objects.filter(Q(titulo__icontains = queryset)).distinct()
+
+    context = {'curso':cursos}
+    return render(request, 'social/home.html', context)
 
 @login_required
 def cursoinfo(request, slugcurso):
@@ -67,16 +76,73 @@ def leccioninfo(request, slugleccion):
 @login_required
 def feed(request):
     publicacion = Publicacion.objects.filter(estado = True)
+    current_user = get_object_or_404(User, pk = request.user.pk)
 
-    context = {'publicacion': publicacion}
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            publicacion = form.save(commit = False)
+            publicacion.user = current_user
+            publicacion.save()
+            messages.success(request, 'Post enviado')
+            return redirect('feed')
+
+    else:
+        form = PostForm()
+
+    context = {'publicacion': publicacion, 'form': form}
     return render(request, 'social/discodesocial/feed.html', context)
+
+@login_required
+def perfil(request, username=None):
+    current_user = request.user
+    
+    if username and username != current_user.username:
+        user = User.objects.get(username = username)
+        posts = user.posts.all()
+    
+    else:
+        posts = current_user.posts.all()
+        user = current_user
+
+    context = {'user':user, 'posts':posts}
+    return render(request, 'social/userprofile.html', context)
+
+@login_required
+def follow(request, username):
+    current_user = request.user
+    to_user = User.objects.get(username = username)
+    to_user_id = to_user
+    rel = Relationship(from_user = current_user, to_user = to_user_id)
+    rel.save()
+    messages.success(request, f'Ahora sigues a {username}')
+    return redirect('feed')
+
+@login_required
+def unfollow(request, username):
+    current_user = request.user
+    to_user = User.objects.get(username = username)
+    to_user_id = to_user
+    rel = Relationship.objects.filter(from_user = current_user.id, to_user = to_user_id).get()
+    rel.delete()
+    messages.success(request, f'Ya no sigues a {username}')
+    return redirect('feed')
 
 
 
 ###############   CHALLENGES   #################
 @login_required
 def challenge(request):
+    queryset = request.GET.get("buscarchallenge")
     retos = Challenge.objects.filter(estado = True)
+
+    #Busqueda
+    if queryset:
+        retos = Challenge.objects.filter(
+            Q(titulo__icontains = queryset) |
+            Q(descripcion__icontains = queryset)
+        ).distinct()
+
     return render(request, 'social/challenge.html', {'reto':retos})
 
 @login_required
@@ -88,8 +154,23 @@ def detalle_challenge(request, slug):
 
 ###############   SOCIAL    #################
 @login_required
-def miperfil(request):
-    return render(request, 'social/miperfil.html')
+def miperfil(request, username=None):
+    current_user = request.user
+    
+    if username and username != current_user.username:
+        user = User.objects.get(username = username)
+        posts = user.posts.all()
+    
+    else:
+        posts = current_user.posts.all()
+        user = current_user
+
+    context = {'user':user, 'posts':posts}
+    return render(request, 'social/miperfil.html', context)
+
+@login_required
+def settings(request):
+    return render(request, 'social/settings.html')
 
 
 

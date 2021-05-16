@@ -16,15 +16,17 @@
     <!-- Modificar por seccion -->
     <!--Buscador-->
     <div class="ContBuscar">
-        <div class="Buscador">
+        <form method="GET">
+          <div class="Buscador">
             <div class="btnBuscador">
-                <a href="#">
-                    <span class="material-icons">search</span>
-                </a>
+              <button type="submit">
+                <span class="material-icons">search</span>
+              </button>
             </div>
-            <input type="text" name="box" placeholder="Buscador" />
-        </div>
-    </div>
+            <input type="text" name="buscarchallenge" placeholder="Buscador" value="{{ request.GET.buscarchallenge }}"/>
+          </div>
+        </form>
+      </div>
 
     <section class="ContenedorListaCursos">
 

@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'discodeapp',
-    'discodefaqs',
+    'discodeapp.apps.DiscodeappConfig',
+    'discodefaqs.apps.DiscodefaqsConfig',
     'discodesocial.apps.DiscodesocialConfig',
     'discodecurso.apps.DiscodecursoConfig',
-    'discoderetos',
+    'discoderetos.apps.DiscoderetosConfig',
     'import_export',
     'ckeditor',
     'django.contrib.humanize'
@@ -83,21 +83,21 @@ WSGI_APPLICATION = 'discode.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-import dj_database_url
-from decouple import config
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default = config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# import dj_database_url
+# from decouple import config
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default = config('DATABASE_URL')
+#     )
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -148,6 +148,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'index'

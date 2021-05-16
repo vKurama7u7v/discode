@@ -4,16 +4,6 @@
 Iniciar Sesión
 {% endblock title %}
 
-{% block alerta %}
-  {% if messages %}
-        {% for message in messages %}
-          <div class="notification {{ message.tags }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-  {% endif %}
-{% endblock alerta %}
-
 {% block Formulario__Titulo %}
 Iniciar Sesión
 {% endblock Formulario__Titulo %}
