@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from discodesocial.models import Publicacion
+from .models import Publicacion
 
 class UserRegisterForm(UserCreationForm):
     username = forms.CharField(label='', widget = forms.TextInput(attrs={'class':'form__input', 'placeholder':' '}), required = True)
