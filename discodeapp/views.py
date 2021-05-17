@@ -35,6 +35,9 @@ def register(request):
     context = {'form': form}
     return render(request, 'registration/register.html', context)
 
+def contacto(request):
+    context = {}
+    return render(request, 'contacto.html')
 
 
 ###############   FAQS    #################

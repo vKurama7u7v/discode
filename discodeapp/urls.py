@@ -7,6 +7,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
     path('', views.index, name = "index"),
     path('faqs', views.faqs, name = "faqs"),
+    path('contact', views.contacto, name = "contact"),
 
     path('register', views.register, name = "register"),
     path('login', LoginView.as_view(template_name='registration/login.html'), name = "login"),

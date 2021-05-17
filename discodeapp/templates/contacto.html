@@ -1,0 +1,53 @@
+{% extends 'registration/register.html' %}
+
+{% block title %}
+Contactanos
+{% endblock title %}
+
+{% block Formulario__Titulo %}
+Contactanos
+{% endblock Formulario__Titulo %}
+
+{% block Formulario__Opciones %}
+{% endblock Formulario__Opciones %}
+
+{% block Grid__Form %}
+<form action="" class="Grid__Form">
+  <div class="form__div" id="Login__Nombre">
+    <input type="text" class="form__input" placeholder=" " name="nombre"/>
+    <label for="" class="form__label">Nombre</label>
+  </div>
+
+  <div class="form__div" id="Login__Apellido">
+    <input type="text" class="form__input" placeholder=" " name="apellido"/>
+    <label for="" class="form__label">Apellido</label>
+  </div>
+
+  <div class="form__div" id="Login__Email">
+    <input type="email" class="form__input" placeholder=" " name="email"/>
+    <label for="" class="form__label">Email</label>
+  </div>
+
+  <div class="form__div" id="Login__Asunto">
+    <input type="text" class="form__input" placeholder=" " name="asunto"/>
+    <label for="" class="form__label">Mensaje</label>
+  </div>
+
+  <div class="Contenedor__boton">
+    <button
+      type="submit"
+      id="submit"
+      class="form__boton"
+      >Enviar</button>
+  </div>
+</form>
+{% endblock Grid__Form %}
+
+{% block Grid__img %}
+<div class="Grid__img">
+  <img
+    src="https://cdn.glitch.com/27131a37-2b0c-4505-85fd-e4cd33d55125%2FRobotMascota%20-%20Contacto.svg?v=1621216090051"
+    alt=""
+  />
+</div>
+{% endblock Grid__img %}
