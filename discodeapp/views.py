@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import *
-from .models import Faqs
-from .models import CategoriaCurso, Curso, Tema, Leccion
-from .models import Dificultad, CategoriaReto, Challenge
-from .models import Profile, Publicacion, Relationship
+from discodefaqs.models import Faqs
+from discodecurso.models import CategoriaCurso, Curso, Tema, Leccion
+from discoderetos.models import Dificultad, CategoriaReto, Challenge
+from discodesocial.models import Profile, Publicacion, Relationship
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator

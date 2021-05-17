@@ -23,6 +23,7 @@ mccabe==0.6.1
 oauthlib==3.1.0
 odfpy==1.4.1
 openpyxl==3.0.7
+Pillow==8.2.0
 psycopg2-binary==2.8.6
 pycparser==2.20
 PyJWT==2.0.1
@@ -37,6 +38,7 @@ sqlparse==0.4.1
 static3==0.7.0
 tablib==3.0.0
 toml==0.10.2
+unicorn==1.0.2
 urllib3==1.26.4
 whitenoise==5.2.0
 wrapt==1.12.1
