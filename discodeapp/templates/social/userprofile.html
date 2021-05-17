@@ -38,7 +38,6 @@
           <div class="Perfil__Nombre">
             <h2>@{{ user.username }}</h2>
             <p class="Perfil__ID">#{{ user.id }} | Estudiante</p>
-            <p class="Perfil__Correo">{{ user.email }}</p>
           </div>
 
         </div>
@@ -107,7 +106,7 @@
           <div class="Perfil__Follow__Titulo">
             <br>
             <br>
-            <h2>Mis Publicaciones</h2>
+            <h2>Publicaciones</h2>
           </div>
           {% if posts %}
             {% for posts in posts %}
