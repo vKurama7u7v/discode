@@ -65,7 +65,7 @@ class Leccion(models.Model):
     identificador = models.ForeignKey(Tema, on_delete = models.CASCADE)
     
     contenido = RichTextField('Contenido del Tema')
-    codigo = models.TextField('Codigo', blank = False, null = False)
+    codigo = models.TextField('Codigo', blank = True, null = True)
 
     estado = models.BooleanField('Visible/No Visible', default = True)
     fecha_creacion = models.DateField('Fecha de Creación', auto_now = False, auto_now_add = True)
