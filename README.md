@@ -2,19 +2,20 @@
 DisCode es una plataforma hecha para enseñar programación a las personas, que no estén familiarizadas en este ámbito, o a los que saben y quieren reforzar sus habilidades y conocimientos. 
 
 =============== INFO DEL PROYECTO =================
-# Nombre Equipo -> SEES.WebDevelopers 
-# Nombre        -> DisCode
-# Descripción   -> Plataforma de cursos
+._Nombre Equipo -> SEES.WebDevelopers 
+._Nombre        -> DisCode
+._Descripción   -> Plataforma de cursos
 
-# Framework     -> Django 
-# Frontend      -> HTML,CSS,JS
-# Backend       -> Python
-# Base de Datos -> SQLite 3
+._Framework     -> Django 
+._Frontend      -> HTML,CSS,JS
+._Backend       -> Python
+._Base de Datos -> SQLite 3
 
-# Social Media  -> Linkedin, Facebook, Instagram
+._Social Media  -> Linkedin, Facebook, Instagram
 
-# Hosting       -> Pendiente
-# Dominio       -> Pendiente
+._Hosting       -> Pendiente
+._Dominio       -> Pendiente
+._Deploy        -> Heroku
 
 
 
