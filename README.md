@@ -1,26 +1,40 @@
-# discode
+# DisCode
+Then install the dependencies:
+
+```sh
+(env)$ pip install -r requirements.txt
+```
+Note the `(env)` in front of the prompt. This indicates that this terminal
+session operates in a virtual environment set up by `virtualenv2`.
+
+Once `pip` has finished downloading the dependencies:
+```sh
+(env)$ cd project
+(env)$ python manage.py runserver
+```
+
+## =============== INFO DEL PROYECTO =================
+
 DisCode es una plataforma hecha para enseñar programación a las personas, que no estén familiarizadas en este ámbito, o a los que saben y quieren reforzar sus habilidades y conocimientos. 
 
-=============== INFO DEL PROYECTO =================
-._Nombre Equipo -> SEES.WebDevelopers 
-._Nombre        -> DisCode
-._Descripción   -> Plataforma de cursos
+###### Nombre Equipo -> SEES.WebDevelopers 
+###### Nombre        -> DisCode
+###### Descripción   -> Plataforma de cursos
 
-._Framework     -> Django 
-._Frontend      -> HTML,CSS,JS
-._Backend       -> Python
-._Base de Datos -> SQLite 3
+###### Framework     -> Django 
+###### Frontend      -> HTML,CSS,JS
+###### Backend       -> Python
+###### Base de Datos -> SQLite 3
 
-._Social Media  -> Linkedin, Facebook, Instagram
+###### Social Media  -> Linkedin, Facebook, Instagram
 
-._Hosting       -> Pendiente
-._Dominio       -> Pendiente
-._Deploy        -> Heroku
-
+###### Hosting       -> Pendiente
+###### Dominio       -> Pendiente
+###### Deploy        -> Heroku
 
 
-=============== DisCode CLASES =================
-# USUARIOS:
+## =============== DisCode CLASES =================
+### USUARIOS:
   - Nombre
   - Apellidos
   - Correo
@@ -29,7 +43,7 @@ DisCode es una plataforma hecha para enseñar programación a las personas, que 
 
 
 
-# CURSO ITEM:
+### CURSO ITEM:
   - Titulo
   - Descripcion
   - Imagen
@@ -47,7 +61,7 @@ DisCode es una plataforma hecha para enseñar programación a las personas, que 
 
 
 
-# RETO ITEM:
+### RETO ITEM:
   - Titulo
   - Descripcion
   - Imagen
@@ -61,7 +75,7 @@ DisCode es una plataforma hecha para enseñar programación a las personas, que 
 
 
 
-# ARTICULOS ITEM:
+### ARTICULOS ITEM:
   - Titulo
   - Fecha de Creación
   - Descripcion
@@ -77,19 +91,18 @@ DisCode es una plataforma hecha para enseñar programación a las personas, que 
       - Contenido Multimedia
 
 
-
-=============== RECURSOS =================
-# Plugins Django:
+## =============== RECURSOS =================
+### Plugins Django:
   - import_export
   - ckeditor
 
 
-# EXTRAS:
+### EXTRAS:
   - Patron de Diseño Lazy Loading (Pendiente)
   - CodeMirro (Pendiente)
 
 
-# MULTIMEDIA:
+### MULTIMEDIA:
   - https://www.pexels.com/es-es/foto/hombre-persona-escritorio-ordenador-portatil-4974915/
   - https://www.pexels.com/es-es/foto/fotografia-de-enfoque-selectivo-del-hombre-frente-a-la-computadora-340152/
   - https://www.freepik.es/vector-gratis/asistente-robot-set_6690923.htm
